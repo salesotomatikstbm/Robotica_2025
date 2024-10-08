@@ -1,7 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import Services from '../../api/service';
-import { useParams } from 'react-router-dom';
-import ModalVideo from 'react-modal-video';
+import ModalVideo from 'react-modal-video'; // No external CSS import
 import srImg from '../../images/services/service_details_image_1.png';
 // Import all 16 images
 import img1 from '../../images/Glimps/1.png';
@@ -22,9 +20,7 @@ import img15 from '../../images/Glimps/15.JPG';
 import img16 from '../../images/Glimps/16.JPG';
 
 const Glimpse = () => {
-  const { slug } = useParams();
-  const ServiceDetails = Services.find(item => item.slug === slug);
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false); // Modal state handler
 
   return (
     <Fragment>
@@ -34,6 +30,8 @@ const Glimpse = () => {
             <h2 className="heading_block text-center text-primary mb-4">
               Glimpse of ROBOTICA 2024
             </h2>
+
+            {/* Video Section */}
             <div className="details_item_image position-relative mb-4">
               <img 
                 src={srImg} 
@@ -41,21 +39,32 @@ const Glimpse = () => {
                 className="img-fluid w-100" 
                 style={{ maxWidth: '100%', height: 'auto' }} // Ensure responsive image
               />
-              <button className="video_btn ripple_effect" onClick={() => setOpen(true)}>
+              {/* Video Play Button */}
+              <button 
+                className="video_btn ripple_effect" 
+                onClick={() => setOpen(true)} // Open modal onClick
+                style={{
+                  position: 'absolute', 
+                  top: '50%', 
+                  left: '50%', 
+                  transform: 'translate(-50%, -50%)', // Center the button
+                  backgroundColor: 'rgba(0, 0, 0, 0.6)', 
+                  borderRadius: '50%', 
+                  padding: '15px', 
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
+              >
                 <span className="btn_icon">
-                  <i className="fa-solid fa-play"></i>
+                  <i className="fa-solid fa-play" style={{ color: '#fff', fontSize: '24px' }}></i>
                 </span>
               </button>
             </div>
 
             {/* Images Gallery */}
             <div className="row">
-              {[
-                img1, img2, img3, img4, img5, img6, 
-                img7, img8, img9, img10, img11, img12, 
-                img13, img14, img15, img16
-              ].map((imgSrc, index) => (
-                <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"> {/* 2 images per row on mobile, 3 on medium, 4 on large */}
+              {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16].map((imgSrc, index) => (
+                <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                   <img src={imgSrc} alt={`Gallery Image ${index + 1}`} className="img-fluid" />
                 </div>
               ))}
@@ -69,8 +78,8 @@ const Glimpse = () => {
         channel='youtube' 
         autoplay 
         isOpen={isOpen} 
-        videoId="uC-K8NP2Khw" 
-        onClose={() => setOpen(false)} 
+        videoId="uC-K8NP2Khw" // Replace with your YouTube video ID
+        onClose={() => setOpen(false)} // Close modal when user clicks outside or the close button
       />
     </Fragment>
   );

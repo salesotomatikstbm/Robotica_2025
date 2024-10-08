@@ -110,7 +110,7 @@ const Hero = (props) => {
                                 <li>
                                     <a
                                         className="btn text-white"
-                                        href=""
+                                        href="https://pages.razorpay.com/robotica25"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         style={{ backgroundColor: '', }}

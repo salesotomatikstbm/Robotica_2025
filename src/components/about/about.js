@@ -41,7 +41,7 @@ const About = () => {
                 <div className="row align-items-center justify-content-lg-between">
                     <div className="col-lg-6">
                         <div className="image_wrap">
-                             <img src={images[currentIndex]} alt="Techco - About" className="img-fluid" />
+                            <img src={images[currentIndex]} alt="Techco - About" className="img-fluid" />
                         </div>
                     </div>
                     <div className="col-lg-6">
@@ -88,16 +88,23 @@ const About = () => {
                                 </ul>
                             </div>
                         </div>
-                        
+
                         {/* Button Section */}
                         <ul className="btns_group unordered_list p-0 justify-content-center" style={{ marginTop: '60px' }}>
                             <li>
-                                <Link onClick={ClickHandler} to="/" className="btn">
-                                    <span className="btn_label" data-text="Register Now">Enroll Now</span>
-                                    <span className="btn_icon">
-                                        <i className="fa-solid fa-arrow-up-right"></i>
-                                    </span>
-                                </Link>
+                            <a 
+  href="https://pages.razorpay.com/robotica25" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="btn"
+>
+  <span className="btn_label" data-text="Register Now">Enroll Now</span>
+  <span className="btn_icon">
+    <i className="fa-solid fa-arrow-up-right"></i>
+  </span>
+</a>
+
+
                             </li>
                             <li>
                                 <a href={pdf} className="" style={{ display: 'block', textAlign: 'center' }} target="_blank" rel="noopener noreferrer">

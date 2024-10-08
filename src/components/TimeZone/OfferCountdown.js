@@ -117,12 +117,18 @@ const OfferCountdown = () => {
           <div className="col-auto">
             <ul className="btns_group unordered_list p-0 d-flex flex-column flex-md-row justify-content-center gap-3">
               <li>
-                <Link onClick={ClickHandler} to="/" className="btn btn-primary w-100 w-md-auto text-center mb-4">
-                  <span className="btn_label" data-text="Register Now">Enroll Now</span>
-                  <span className="btn_icon">
-                    <i className="fa-solid fa-arrow-up-right"></i>
-                  </span>
-                </Link>
+              <a 
+  href="https://pages.razorpay.com/robotica25" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="btn"
+>
+  <span className="btn_label" data-text="Register Now">Enroll Now</span>
+  <span className="btn_icon">
+    <i className="fa-solid fa-arrow-up-right"></i>
+  </span>
+</a>
+
               </li>
               <li>
                 <a

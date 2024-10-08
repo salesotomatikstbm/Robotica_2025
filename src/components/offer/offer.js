@@ -50,10 +50,10 @@ const Offer = () => {
 
                 <div className="row">
                     {services.map((service, index) => (
-                        <div 
-                            className={`${service.col} mb-4`} 
-                            key={service.id} 
-                            data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'} 
+                        <div
+                            className={`${service.col} mb-4`}
+                            key={service.id}
+                            data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
                             data-aos-duration="500"
                         >
                             {service.title && (
@@ -79,21 +79,27 @@ const Offer = () => {
 
                 {/* Button Group */}
                 <div className="text-center mb-4">
-                <ul className="btns_group unordered_list p-0 justify-content-center">
+                    <ul className="btns_group unordered_list p-0 justify-content-center">
                         <li className="me-3"> {/* Add margin to the right for spacing */}
-                            <Link onClick={ClickHandler} to="/" className="btn">
+                            <a
+                                href="https://pages.razorpay.com/robotica25"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn"
+                            >
                                 <span className="btn_label" data-text="Register Now">Enroll Now</span>
                                 <span className="btn_icon">
                                     <i className="fa-solid fa-arrow-up-right"></i>
                                 </span>
-                            </Link>
+                            </a>
+
                         </li>
                         <li>
-                            <a 
-                                href={pdf} 
-                                className="" 
-                                style={{ display: 'block', textAlign: 'center' }} 
-                                target="_blank" 
+                            <a
+                                href={pdf}
+                                className=""
+                                style={{ display: 'block', textAlign: 'center' }}
+                                target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 <span className="btn_label" data-text="Learn Now">Know More</span>

@@ -57,7 +57,7 @@ const WorkingModel = () => {
                                 <div className="about_content">
                                     <h2 className="heading_text text-primary">Working Model Competition</h2>
                                     <p className="heading_description mb-2 text-dark text-justify">
-                                    Transform your visions into reality! Teams are invited to craft and present their innovative working models, elucidating both their functionality and the underlying scientific principles. Seize this opportunity to captivate a panel of esteemed judges and underscore the profound significance of your creation!
+                                        Transform your visions into reality! Teams are invited to craft and present their innovative working models, elucidating both their functionality and the underlying scientific principles. Seize this opportunity to captivate a panel of esteemed judges and underscore the profound significance of your creation!
                                     </p>
                                     <ul className="event-themes-list mb-4">
                                         <li><strong>Date:</strong> 7th February 2025</li>
@@ -69,12 +69,14 @@ const WorkingModel = () => {
 
                                 {/* Updated Button Group for mobile responsiveness */}
                                 <div className="btns_group d-flex flex-column flex-md-row justify-content-center gap-3">
-                                    <Link onClick={ClickHandler} to="/" className="btn btn-primary w-100 w-md-auto text-center">
+                                    <a href="https://pages.razorpay.com/robotica25"
+                                        target="_blank"
+                                        rel="noopener noreferrer" className="btn btn-primary w-100 w-md-auto text-center">
                                         <span className="btn_label" data-text="Register Now">Enroll Now</span>
                                         <span className="btn_icon">
                                             <i className="fa-solid fa-arrow-up-right"></i>
                                         </span>
-                                    </Link>
+                                    </a>
                                     <a href={pdf} className=" btn-secondary w-100 w-md-auto text-center" target="_blank" rel="noopener noreferrer">
                                         <span className="btn_label" data-text="Learn Now">Know More</span>
                                     </a>

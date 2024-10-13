@@ -43,14 +43,14 @@ const RoboRace = () => {
                                 <div className="btns_group d-flex flex-column flex-md-row justify-content-center gap-3">
                                 <a href="https://pages.razorpay.com/robotica25"
                                         target="_blank"
-                                        rel="noopener noreferrer" className="btn btn-primary w-100 w-md-auto text-center">
+                                        rel="noopener noreferrer" className="btn btn-primary w-50 w-md-auto text-center">
                                         <span className="btn_label" data-text="Register Now">Enroll Now</span>
                                         <span className="btn_icon">
                                             <i className="fa-solid fa-arrow-up-right"></i>
                                         </span>
                                     </a>
 
-                                    <a href={pdf} className=" btn-secondary w-100 w-md-auto text-center" target="_blank" rel="noopener noreferrer">
+                                    <a href={pdf} className=" btn-secondary  w-md-auto text-center" target="_blank" rel="noopener noreferrer">
                                         <span className="btn_label" data-text="Learn Now">Know More</span>
                                     </a>
                                 </div>

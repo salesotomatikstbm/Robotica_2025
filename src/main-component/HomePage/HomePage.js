@@ -50,9 +50,9 @@ const HomePage = () => {
                     <section id="founder-message" className="" data-aos="fade-down" data-aos-duration="1000">
                         <FounderMessage />
                     </section>
-                    <section id="guests" className="" data-aos="fade-right" data-aos-duration="1000">
+                    {/* <section id="guests" className="" data-aos="fade-right" data-aos-duration="1000">
                         <Guests />
-                    </section>
+                    </section> */}
                     <section id="offer-countdown" className="" data-aos="flip-left" data-aos-duration="800">
                         <OfferCountdown />
                     </section>

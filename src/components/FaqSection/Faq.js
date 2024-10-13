@@ -18,7 +18,7 @@ const Faq = () => {
         {
             id: '1',
             question: 'Whom to Contact?',
-            answer: 'For further clarifications, you can always feel free to reach our Otomatiks Office through Phone: 0416-3554608 / +91-90432 09448 or by Mail at: robotica24@otomatiks.in'
+            answer: 'For further clarifications, you can always feel free to reach our Otomatiks Office through Phone: 0416-3554608 / +91-90432 09448 or by Mail at: robotica25@otomatiks.in'
         },
         {
             id: '2',
@@ -28,7 +28,7 @@ const Faq = () => {
         {
             id: '3',
             question: 'Is Accommodation Provided?',
-            answer: 'Accommodation is not part of the registration fees. It will be provided if needed at additional charges. Kindly reach us at Phone: 0416-3554608 / +91-90432 09448 or by Mail at: robotica24@otomatiks.in.'
+            answer: 'Accommodation is not part of the registration fees. It will be provided if needed at additional charges. Kindly reach us at Phone: 0416-3554608 / +91-90432 09448 or by Mail at: robotica25@otomatiks.in.'
         },
         {
             id: '4',

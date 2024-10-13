@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import sImg2 from '../../images/Offer/1.png';
 import sImg3 from '../../images/Offer/2.png';
 import sImg4 from '../../images/Offer/3.png';
-import pdf from '../../images/example.pdf';
+import pdf from '../../images/about.pdf';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import pdfFile from '../../images/example.pdf'; // Correct the path to your actual PDF
+import pdf from '../../images/about.pdf'; // Correct the path to your actual PDF
 
 const OfferCountdown = () => {
   const targetDate = new Date('2025-02-07T00:00:00'); // Target Date
@@ -51,36 +51,36 @@ const OfferCountdown = () => {
 
           {/* Mobile View: One row for countdown items */}
           <div className="d-md-none">
-  {/* Mobile View: Two rows for countdown items */}
-  <div className="row">
-    <div className="col-6" data-aos="fade-left" data-aos-duration="500">
-      <div className="p-3 rounded shadow">
-        <h2>{timeLeft.days}</h2>
-        <p>Days</p>
-      </div>
-    </div>
-    <div className="col-6" data-aos="fade-right" data-aos-duration="600">
-      <div className="p-3 rounded shadow">
-        <h2>{timeLeft.hours}</h2>
-        <p>Hours</p>
-      </div>
-    </div>
-  </div>
-  <div className="row">
-    <div className="col-6" data-aos="fade-left" data-aos-duration="700">
-      <div className="p-3 rounded shadow">
-        <h2>{timeLeft.minutes}</h2>
-        <p>Minutes</p>
-      </div>
-    </div>
-    <div className="col-6" data-aos="fade-right" data-aos-duration="800">
-      <div className="p-3 rounded shadow">
-        <h2>{timeLeft.seconds}</h2>
-        <p>Seconds</p>
-      </div>
-    </div>
-  </div>
-</div>
+            {/* Mobile View: Two rows for countdown items */}
+            <div className="row">
+              <div className="col-6" data-aos="fade-left" data-aos-duration="500">
+                <div className="p-3 rounded shadow">
+                  <h2>{timeLeft.days}</h2>
+                  <p>Days</p>
+                </div>
+              </div>
+              <div className="col-6" data-aos="fade-right" data-aos-duration="600">
+                <div className="p-3 rounded shadow">
+                  <h2>{timeLeft.hours}</h2>
+                  <p>Hours</p>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-6" data-aos="fade-left" data-aos-duration="700">
+                <div className="p-3 rounded shadow">
+                  <h2>{timeLeft.minutes}</h2>
+                  <p>Minutes</p>
+                </div>
+              </div>
+              <div className="col-6" data-aos="fade-right" data-aos-duration="800">
+                <div className="p-3 rounded shadow">
+                  <h2>{timeLeft.seconds}</h2>
+                  <p>Seconds</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
           {/* Desktop View: Four columns for countdown items */}
@@ -117,30 +117,25 @@ const OfferCountdown = () => {
           <div className="col-auto">
             <ul className="btns_group unordered_list p-0 d-flex flex-column flex-md-row justify-content-center gap-3">
               <li>
-              <a 
-  href="https://pages.razorpay.com/robotica25" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  className="btn"
->
-  <span className="btn_label" data-text="Register Now">Enroll Now</span>
-  <span className="btn_icon">
-    <i className="fa-solid fa-arrow-up-right"></i>
-  </span>
-</a>
+                <a
+                  href="https://pages.razorpay.com/robotica25"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn"
+                >
+                  <span className="btn_label" data-text="Register Now">Enroll Now</span>
+                  <span className="btn_icon">
+                    <i className="fa-solid fa-arrow-up-right"></i>
+                  </span>
+                </a>
 
               </li>
               <li>
-                <a
-                  href={pdfFile} // Path to the PDF file
-                  className="btn-secondary w-100 w-md-auto text-center mb-4"
-                  target="_blank" // Opens the PDF in a new tab
-                  rel="noopener noreferrer"
-                >
-                  <span className="btn_label" data-text="Learn Now">Know More</span>
-                  <span className="btn_icon"></span>
-                </a>
-              </li>
+                                <a href={pdf} className="" style={{ display: 'block', textAlign: 'center' }} target="_blank" rel="noopener noreferrer">
+                                    <span className="btn_label" data-text="Learn Now">Know More</span>
+                                    <span className="btn_icon"></span>
+                                </a>
+                            </li>
             </ul>
           </div>
         </div>

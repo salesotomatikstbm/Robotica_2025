@@ -10,7 +10,7 @@ import newImage3 from '../../images/roborace/3.png';
 import newImage4 from '../../images/roborace/4.png';
 import newImage5 from '../../images/roborace/5.png';
 
-import pdf from '../../images/example.pdf';
+import pdf from '../../images/workingmodel.pdf';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]); // Enable Swiper modules
 

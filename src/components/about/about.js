@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import wImg1 from '../../images/about/1.png';
 import wImg2 from '../../images/about/2.png';
 import wImg3 from '../../images/about/3.png';
-import pdf from '../../images/example.pdf';
+import pdf from '../../images/about.pdf';
 
 // Policy data for Day 1 and Day 2 with Font Awesome icons
 const day1Policy = [
@@ -92,17 +92,17 @@ const About = () => {
                         {/* Button Section */}
                         <ul className="btns_group unordered_list p-0 justify-content-center" style={{ marginTop: '60px' }}>
                             <li>
-                            <a 
-  href="https://pages.razorpay.com/robotica25" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  className="btn"
->
-  <span className="btn_label" data-text="Register Now">Enroll Now</span>
-  <span className="btn_icon">
-    <i className="fa-solid fa-arrow-up-right"></i>
-  </span>
-</a>
+                                <a
+                                    href="https://pages.razorpay.com/robotica25"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn"
+                                >
+                                    <span className="btn_label" data-text="Register Now">Enroll Now</span>
+                                    <span className="btn_icon">
+                                        <i className="fa-solid fa-arrow-up-right"></i>
+                                    </span>
+                                </a>
 
 
                             </li>

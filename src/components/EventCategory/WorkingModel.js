@@ -33,7 +33,7 @@ const WorkingModel = () => {
                     <div className="container">
                         <h1 className="heading_text text-center heading_block text-primary">Event Category</h1>
                         <div className="row align-items-center justify-content-center">
-                            <div className="col-lg-5 mb-4 text-center">
+                            <div className="col-lg-6 mb-4 text-center">
                                 <div className="team_cartoon_image">
                                     {/* Swiper slider starts here */}
                                     <Swiper

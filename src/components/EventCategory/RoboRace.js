@@ -55,7 +55,7 @@ const RoboRace = () => {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-5 mb-4 text-center">
+                            <div className="col-lg-6 mb-4 text-center">
                                 <div className="team_cartoon_image">
                                     {/* Swiper slider starts here */}
                                     <Swiper

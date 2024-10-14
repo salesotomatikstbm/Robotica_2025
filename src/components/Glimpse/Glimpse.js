@@ -27,7 +27,7 @@ const Glimpse = () => {
       <main className="bg-white">
         <section className="service_details_section">
           <div className="container">
-            <h2 className="heading_block text-center text-primary mb-4">
+            <h2 className="heading_text text-center heading_block text-primary">
               Glimpse of ROBOTICA 2024
             </h2>
 

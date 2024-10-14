@@ -46,7 +46,7 @@ const OfferCountdown = () => {
       <div className="container">
         <div className="row text-center">
           <div className="col-12 heading_block">
-            <h2 className="heading_text mb-0 text-primary">Offer Ends In</h2>
+            <h2 className="heading_text mb-0 text-primary">Registration Ends In</h2>
           </div>
 
           {/* Mobile View: One row for countdown items */}

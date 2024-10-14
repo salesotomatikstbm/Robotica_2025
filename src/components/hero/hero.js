@@ -1,28 +1,33 @@
 import React from 'react';
+import Slider from 'react-slick';
 import shape1 from '../../images/hero/shape_image_1.webp';
 import shape2 from '../../images/hero/shape_image_2.webp';
 import shape3 from '../../images/hero/shape_image_3.webp';
 import shape4 from '../../images/hero/shape_image_4.webp';
 import placeholderLogo from '../../images/site_logo/logo.png'; // Main logo
 import presentingLogo from '../../images/site_logo/otomatiks logo.png'; // Logo before the content
-import bg from '../../images/Robotica.mp4';
-import video from '../../images/bg.mp4';
 
 const Hero = (props) => {
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: true,
+    };
+
     return (
         <section
             className="software_company_hero_section xb-hidden bg-white mb-0"
             style={{ position: 'relative', paddingTop: '10px' }}
         >
             {/* Background Video Section */}
-            <div className="background-video-wrapper bg-white ">
-                {/* <video autoPlay muted loop className="bg-video">
-                    <source src={bg} type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video> */}
-
+            <div className="background-video-wrapper bg-white">
                 {/* Content with background video */}
-                <div className=" content-with-bg">
+                <div className="content-with-bg">
                     <div className="hero_top_logo_wrap" style={{ textAlign: 'center', marginBottom: '10px', zIndex: 9999 }}>
                         <img
                             src={presentingLogo}
@@ -47,11 +52,11 @@ const Hero = (props) => {
 
             {/* Rest of the section */}
             <div className="container">
-                <div className="row align-items-center ">
+                <div className="row align-items-center">
                     <div className="col-lg-6">
-                        <div className="content_wrap " style={{ marginBottom: '30px', marginTop: '50px' }}>
+                        <div className="content_wrap" style={{ marginBottom: '30px', marginTop: '50px' }}>
                             <h2 className="" style={{ marginBottom: '15px' }}>
-                                Robotica <mark >2025</mark><br /> Celebrating Innovation
+                                Robotica <mark>2025</mark><br /> Celebrating Innovation
                             </h2>
                             <p className="text-dark text-justify" style={{ marginBottom: '20px' }}>
                                 Robotica’25 ain’t just a competition; it’s a celebration of innovation and creativity in the realm of robotics. Building on the success of our previous competitions, where we welcomed over 2500+ participants from 80+ schools across the state, this year aims to surpass all expectations.
@@ -122,7 +127,7 @@ const Hero = (props) => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="hotline_block " href="tel:+420318568511">
+                                    <a className="hotline_block" href="tel:+420318568511">
                                         <span className="hotline_icon bg-primary">
                                             <i className="fa-solid fa-phone-volume "></i>
                                         </span>
@@ -137,19 +142,32 @@ const Hero = (props) => {
                     </div>
                     <div className="col-lg-6">
                         <div className="video_wrap" style={{ marginTop: '0px' }}>
-                            <video
-                                width="100%"
-                                height="310"
-                                controls
-                                autoPlay
-                                muted
-                                loop // Add this attribute for looping
-                                style={{ borderRadius: '8px' }}
-                            >
-                                <source src={video} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-
+                            <Slider {...sliderSettings}>
+                                <div>
+                                    <iframe
+                                        width="100%"
+                                        height="350"
+                                        src="https://www.youtube.com/embed/KcjSdEJ0CAA"
+                                        title="YouTube Video 1"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                        style={{ borderRadius: '8px' }}
+                                    ></iframe>
+                                </div>
+                                <div>
+                                    <iframe
+                                        width="100%"
+                                        height="350"
+                                        src="https://www.youtube.com/embed/0G-QfbasgEw"
+                                        title="YouTube Video 2"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                        style={{ borderRadius: '8px' }}
+                                    ></iframe>
+                                </div>
+                            </Slider>
                         </div>
                     </div>
                 </div>
@@ -181,32 +199,15 @@ const Hero = (props) => {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    z-index: -1; /* Behind content */
+                    z-index: 1;
                 }
                 .content-with-bg {
                     position: relative;
-                    z-index: 1; /* On top of the background video */
+                    z-index: 2;
                 }
-                @media (max-width: 767px) {
-                    .content_wrap {
-                        margin-top: -50px;
-                    }
-                    .hero_logo {
-                        padding-bottom: 0px; /* Reduce bottom space in mobile */
-                    }
-                    .hero_logo img {
-                        width: 250px;
-                        height: auto;
-                    }
-                    .hero_top_logo_wrap {
-                        top: 50px;
-                    }
-                    .shape_image_1, .shape_image_3 {
-                        margin-top: 50px; /* Adjust spacing for shapes */
-                    }
-                    .shape_image_2, .shape_image_4 {
-                        margin-bottom: 10px; /* Adjust spacing for shapes */
-                    }
+                .content_with_bg {
+                    padding-left: 10px !important;
+                    z-index: 9999;
                 }
             `}</style>
         </section>

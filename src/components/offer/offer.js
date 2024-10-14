@@ -45,7 +45,7 @@ const Offer = () => {
         <section className="section_space bg-white">
             <div className="container">
                 <div className="text-center mb-4">
-                    <h2 className="text-primary">What You Get</h2>
+                    <h1 className="heading_text text-center heading_block text-primary">What You Get</h1>
                 </div>
 
                 <div className="row">
@@ -78,9 +78,9 @@ const Offer = () => {
                 </div>
 
                 {/* Button Group */}
-                <div className="text-center mb-4">
+                {/* <div className="text-center mb-4">
                     <ul className="btns_group unordered_list p-0 justify-content-center">
-                        <li className="me-3"> {/* Add margin to the right for spacing */}
+                        <li className="me-3"> 
                             <a
                                 href="https://pages.razorpay.com/robotica25"
                                 target="_blank"
@@ -107,7 +107,7 @@ const Offer = () => {
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> */}
             </div>
         </section>
     );

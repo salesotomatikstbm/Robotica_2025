@@ -9,14 +9,14 @@ import wImg3 from '../../images/about/3.png';
 import pdf from '../../images/about.pdf';
 
 const day1Policy = [
-    { title: ' : Working Model & Roborace', time: '9 AM - 1 PM', icon: faCheckCircle },
-    { title: ' : Panel Discussion', time: '2 PM - 4 PM', icon: faLeaf },
-    { title: ' : Prize Distribution', time: '4 PM - 6 PM', icon: faTrophy },
+    { title: 'Working Model & Roborace', time: '9 AM - 1 PM', icon: faCheckCircle },
+    { title: 'Panel Discussion', time: '2 PM - 4 PM', icon: faLeaf },
+    { title: 'Prize Distribution', time: '4 PM - 6 PM', icon: faTrophy },
 ];
 
 const day2Policy = [
-    { title: ' : In-School Competition', time: '9 AM - 4 PM', icon: faBox },
-    { title: ' : Prize Distribution', time: '4 PM - 6 PM', icon: faReceipt },
+    { title: 'In-School Competition', time: '9 AM - 4 PM', icon: faBox },
+    { title: 'Prize Distribution', time: '4 PM - 6 PM', icon: faReceipt },
 ];
 
 const About = () => {
@@ -51,7 +51,7 @@ const About = () => {
 
                             {/* Day 1 Schedule */}
                             <div className="day_schedule">
-                                <h4 className="mb-3 text-primary" >Day 1 - 7th February 2025 </h4>
+                                <h4 className="mb-3 text-secondary" >Day 1 - 7th February 2025 </h4>
                                 <ul className="service_facilities_group unordered_list">
                                     {day1Policy.map((policy, index) => (
                                         <li key={index}>
@@ -60,8 +60,9 @@ const About = () => {
                                                     <FontAwesomeIcon icon={policy.icon} />
                                                 </span>
                                                 <span className="iconbox_content">
-                                                    <strong className="iconbox_time mb-0">{policy.time}</strong>
-                                                    <strong className="iconbox_title mb-0">{policy.title}</strong>
+                                                   
+                                                    <strong className="iconbox_title mb-0">{policy.title}</strong> <br></br>
+                                                    <strong className="iconbox_time mb-0">{policy.time}</strong> 
                                                 </span>
                                             </strong>
                                         </li>
@@ -71,7 +72,7 @@ const About = () => {
 
                             {/* Day 2 Schedule */}
                             <div className="day_schedule" style={{ marginTop: '40px' }}>
-                                <h4 className="mb-3 text-primary" >Day 2 - 8th of February 2025 </h4>
+                                <h4 className="mb-3 text-secondary" >Day 2 - 8th of February 2025 </h4>
                                 <ul className="service_facilities_group unordered_list">
                                     {day2Policy.map((policy, index) => (
                                         <li key={index}>
@@ -80,8 +81,9 @@ const About = () => {
                                                     <FontAwesomeIcon icon={policy.icon} />
                                                 </span>
                                                 <span className="iconbox_content">
-                                                    <strong className="iconbox_time mb-0">{policy.time}</strong>
-                                                    <strong className="iconbox_title mb-0">{policy.title}</strong>
+                                                <strong className="iconbox_title mb-0">{policy.title}</strong> <br></br>
+                                                    <strong className="iconbox_time mb-0">{policy.time}</strong> 
+                                                   
                                                 </span>
                                             </strong>
                                         </li>

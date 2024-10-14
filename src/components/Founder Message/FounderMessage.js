@@ -1,38 +1,18 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Founder from '../../images/Founder.png'; 
-import BackgroundVideo from '../../images/Founderbg.mp4'; 
 
 const FounderMessage = () => {
   return (
     <div>
       <div
-        className="container my-5 position-relative" 
+        className="container my-5 position-relative bg-primary" // Added bg-primary class
         style={{
           borderRadius: "15px",
           padding: "30px",
           boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
         }}
       >
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="position-absolute w-100 h-100"
-          style={{
-            objectFit: "cover",
-            top: 0,
-            left: 0,
-            borderRadius: "15px", 
-            zIndex: -1, 
-          }}
-        >
-          <source src={BackgroundVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
         <div className="row align-items-center">
           {/* Founder Message */}
           <div className="col-12 col-md-8 order-2 order-md-1 mt-4 mt-md-0">

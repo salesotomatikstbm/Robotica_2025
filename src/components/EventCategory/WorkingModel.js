@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css'; // Import Swiper styles
 import 'swiper/swiper.min.css';
@@ -33,27 +32,7 @@ const WorkingModel = () => {
                     <div className="container">
                         <h1 className="heading_text text-center heading_block text-primary">Event Category</h1>
                         <div className="row align-items-center justify-content-center">
-                            <div className="col-lg-6 mb-4 text-center">
-                                <div className="team_cartoon_image">
-                                    {/* Swiper slider starts here */}
-                                    <Swiper
-                                        spaceBetween={30}
-                                        centeredSlides={true}
-                                        autoplay={{
-                                            delay: 2000,
-                                            disableOnInteraction: false,
-                                        }}
-                                        className="mySwiper"
-                                    >
-                                        {[srImg1, srImg2, srImg3, srImg4, srImg5, srImg6, srImg7, srImg8, srImg9, srImg10, srImg11, srImg12].map((img, index) => (
-                                            <SwiperSlide key={index}>
-                                                <img src={img} alt={`Service Cartoon ${index + 1}`} className="img-fluid" />
-                                            </SwiperSlide>
-                                        ))}
-                                    </Swiper>
-                                </div>
-                            </div>
-                            <div className="col-lg-5">
+                            <div className="col-lg-5 mb-4">
                                 <div className="about_content">
                                     <h2 className="heading_text text-primary">Working Model Competition</h2>
                                     <p className="heading_description mb-2 text-dark text-justify">
@@ -69,7 +48,7 @@ const WorkingModel = () => {
 
                                 {/* Updated Button Group for mobile responsiveness */}
                                 <div className="btns_group d-flex flex-column flex-md-row justify-content-center gap-3">
-                                    <a href="https://pages.razorpay.com/robotica25"
+                                <a href="https://pages.razorpay.com/robotica25"
                                         target="_blank"
                                         rel="noopener noreferrer" className="btn btn-primary w-50 w-md-auto text-center">
                                         <span className="btn_label" data-text="Register Now">Enroll Now</span>
@@ -80,6 +59,34 @@ const WorkingModel = () => {
                                     <a href={pdf} className=" btn-secondary  w-md-auto text-center" target="_blank" rel="noopener noreferrer">
                                         <span className="btn_label" data-text="Learn Now">Know More</span>
                                     </a>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-6 mb-4 text-center">
+                                <div className="team_cartoon_image">
+                                    {/* Swiper slider starts here */}
+                                    <Swiper
+                                        spaceBetween={30}
+                                        centeredSlides={true}
+                                        autoplay={{
+                                            delay: 2000,
+                                            disableOnInteraction: false,
+                                        }}
+                                   
+                                        navigation={false}
+                                        className="mySwiper"
+                                    >
+                                        {[srImg1, srImg2, srImg3, srImg4, srImg5, srImg6, srImg7, srImg8, srImg9, srImg10, srImg11, srImg12].map((img, index) => (
+                                            <SwiperSlide key={index}>
+                                                <img
+                                                    src={img}
+                                                    alt={`Working Model Image ${index + 1}`}
+                                                    className="img-fluid rounded shadow"
+                                                    style={{ width: '130%', height: '400px', objectFit: 'cover' }} // Set equal width and height
+                                                />
+                                            </SwiperSlide>
+                                        ))}
+                                    </Swiper>
                                 </div>
                             </div>
                         </div>

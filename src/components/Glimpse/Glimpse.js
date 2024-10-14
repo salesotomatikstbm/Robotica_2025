@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import ModalVideo from 'react-modal-video'; // No external CSS import
+import ModalVideo from 'react-modal-video'; // Import ModalVideo
 import srImg from '../../images/services/service_details_image_1.png';
 // Import all 16 images
 import img1 from '../../images/Glimps/1.png';
@@ -52,7 +52,8 @@ const Glimpse = () => {
                   borderRadius: '50%', 
                   padding: '15px', 
                   border: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  zIndex: 10 // Ensure button appears above the image
                 }}
               >
                 <span className="btn_icon">
@@ -65,7 +66,7 @@ const Glimpse = () => {
             <div className="row">
               {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16].map((imgSrc, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                  <img src={imgSrc} alt={`Gallery Image ${index + 1}`} className="img-fluid" />
+                  <img src={imgSrc} alt={`Gallery Image ${index + 1}`} className="img-fluid" style={{ height: 'auto', width: '100%' }} />
                 </div>
               ))}
             </div>
@@ -80,7 +81,28 @@ const Glimpse = () => {
         isOpen={isOpen} 
         videoId="uC-K8NP2Khw" // Replace with your YouTube video ID
         onClose={() => setOpen(false)} // Close modal when user clicks outside or the close button
+        className="modal-video" // Optional: add a custom class for additional styling if needed
       />
+      
+      <style jsx>{`
+        .modal-video {
+          top: -25%; // Adjust to position modal higher
+        }
+        .modal-video .modal-dialog {
+          margin: 0 auto; // Center the modal horizontally
+          position: absolute; // Set position to absolute
+          width: 90%; // Ensure modal width is responsive
+          max-width: 800px; // Set a max width for larger screens
+        }
+        @media (max-width: 768px) {
+          .modal-video {
+            top: -90%; // Adjust modal position for mobile view
+          }
+          .modal-video .modal-dialog {
+            width: 95%; // Make modal wider for small screens
+          }
+        }
+      `}</style>
     </Fragment>
   );
 };

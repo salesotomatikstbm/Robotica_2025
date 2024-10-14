@@ -30,10 +30,6 @@ const About = () => {
         return () => clearInterval(interval);
     }, [images.length]);
 
-    const ClickHandler = () => {
-        window.scrollTo(0, 0);
-    };
-
     return (
         <section className="service_section section_space bg-white">
             <div className="container">
@@ -51,7 +47,7 @@ const About = () => {
 
                             {/* Day 1 Schedule */}
                             <div className="day_schedule">
-                                <h4 className="mb-3 text-secondary" >Day 1 - 7th February 2025 </h4>
+                                <h4 className="mb-3 text-secondary">Day 1 - 7th February 2025</h4>
                                 <ul className="service_facilities_group unordered_list">
                                     {day1Policy.map((policy, index) => (
                                         <li key={index}>
@@ -60,9 +56,8 @@ const About = () => {
                                                     <FontAwesomeIcon icon={policy.icon} />
                                                 </span>
                                                 <span className="iconbox_content">
-                                                   
-                                                    <strong className="iconbox_title mb-0">{policy.title}</strong> <br></br>
-                                                    <strong className="iconbox_time mb-0">{policy.time}</strong> 
+                                                    <strong className="iconbox_title mb-0">{policy.title}</strong> <br />
+                                                    <strong className="iconbox_time mb-0">{policy.time}</strong>
                                                 </span>
                                             </strong>
                                         </li>
@@ -72,7 +67,7 @@ const About = () => {
 
                             {/* Day 2 Schedule */}
                             <div className="day_schedule" style={{ marginTop: '40px' }}>
-                                <h4 className="mb-3 text-secondary" >Day 2 - 8th of February 2025 </h4>
+                                <h4 className="mb-3 text-secondary">Day 2 - 8th of February 2025</h4>
                                 <ul className="service_facilities_group unordered_list">
                                     {day2Policy.map((policy, index) => (
                                         <li key={index}>
@@ -81,9 +76,8 @@ const About = () => {
                                                     <FontAwesomeIcon icon={policy.icon} />
                                                 </span>
                                                 <span className="iconbox_content">
-                                                <strong className="iconbox_title mb-0">{policy.title}</strong> <br></br>
-                                                    <strong className="iconbox_time mb-0">{policy.time}</strong> 
-                                                   
+                                                    <strong className="iconbox_title mb-0">{policy.title}</strong> <br />
+                                                    <strong className="iconbox_time mb-0">{policy.time}</strong>
                                                 </span>
                                             </strong>
                                         </li>
@@ -93,27 +87,27 @@ const About = () => {
                         </div>
 
                         {/* Button Section */}
-                        <ul className="btns_group unordered_list p-0 justify-content-center" style={{ marginTop: '60px' }}>
-                            <li>
-                                <a
-                                    href="https://pages.razorpay.com/robotica25"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn"
-                                >
-                                    <span className="btn_label" data-text="Register Now">Enroll Now</span>
-                                    <span className="btn_icon">
-                                        <i className="fa-solid fa-arrow-up-right"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href={pdf} className="" style={{ display: 'block', textAlign: 'center' }} target="_blank" rel="noopener noreferrer">
-                                    <span className="btn_label" data-text="Learn Now">Know More</span>
-                                    <span className="btn_icon"></span>
-                                </a>
-                            </li>
-                        </ul>
+                        <div className="btns_group d-flex flex-column flex-md-row justify-content-center">
+                            <a
+                                href="https://pages.razorpay.com/robotica25"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-primary w-45 w-md-auto text-center"
+                            >
+                                <span className="btn_label" data-text="Register Now">Enroll Now</span>
+                                <span className="btn_icon">
+                                    <i className="fa-solid fa-arrow-up-right"></i>
+                                </span>
+                            </a>
+                            <a
+                                href={pdf}
+                                className="btn-secondary w-md-auto text-center"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <span className="btn_label" data-text="Learn Now">Know More</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -128,6 +122,7 @@ const About = () => {
                         width: 100%; /* Full width */
                         padding: 0; /* Remove padding */
                     }
+                        
                     .day_schedule {
                         width: 100%; /* Full width */
                         margin: 0 auto; /* Center align */
@@ -149,6 +144,14 @@ const About = () => {
                     }
                     .iconbox_title {
                         margin-top: 5px;
+                    }
+                        .heading_block{
+                        margin-top: -10%;
+                        text-aline: center;
+                        }
+                    /* Remove bottom space on mobile */
+                    .service_section {
+                        padding-bottom: 0; /* Remove bottom padding */
                     }
                 }
             `}</style>

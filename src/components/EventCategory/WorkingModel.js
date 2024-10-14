@@ -15,7 +15,7 @@ import srImg9 from '../../images/workingmodel/9.png';
 import srImg10 from '../../images/workingmodel/10.png';
 import srImg11 from '../../images/workingmodel/11.png';
 import srImg12 from '../../images/workingmodel/12.png';
-
+import RoboRace from './RoboRace';
 import pdf from '../../images/workingmodel.pdf';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]); // Enable Swiper modules
@@ -32,7 +32,7 @@ const WorkingModel = () => {
                     <div className="container">
                         <h1 className="heading_text text-center heading_block text-primary">Event Category</h1>
                         <div className="row align-items-center justify-content-center">
-                            <div className="col-lg-5 mb-4">
+                            <div className="col-lg-5">
                                 <div className="about_content">
                                     <h2 className="heading_text text-primary">Working Model Competition</h2>
                                     <p className="heading_description mb-2 text-dark text-justify">
@@ -47,16 +47,24 @@ const WorkingModel = () => {
                                 </div>
 
                                 {/* Updated Button Group for mobile responsiveness */}
-                                <div className="btns_group d-flex flex-column flex-md-row justify-content-center gap-3">
-                                <a href="https://pages.razorpay.com/robotica25"
+                                <div className="btns_group d-flex flex-column flex-md-row justify-content-center">
+                                    <a
+                                        href="https://pages.razorpay.com/robotica25"
                                         target="_blank"
-                                        rel="noopener noreferrer" className="btn btn-primary w-50 w-md-auto text-center">
+                                        rel="noopener noreferrer"
+                                        className="btn btn-primary w-45 w-md-auto text-center"
+                                    >
                                         <span className="btn_label" data-text="Register Now">Enroll Now</span>
                                         <span className="btn_icon">
                                             <i className="fa-solid fa-arrow-up-right"></i>
                                         </span>
                                     </a>
-                                    <a href={pdf} className=" btn-secondary  w-md-auto text-center" target="_blank" rel="noopener noreferrer">
+                                    <a
+                                        href={pdf}
+                                        className="btn-secondary w-md-auto text-center"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <span className="btn_label" data-text="Learn Now">Know More</span>
                                     </a>
                                 </div>
@@ -72,7 +80,6 @@ const WorkingModel = () => {
                                             delay: 2000,
                                             disableOnInteraction: false,
                                         }}
-                                   
                                         navigation={false}
                                         className="mySwiper"
                                     >
@@ -92,6 +99,15 @@ const WorkingModel = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Custom CSS to remove bottom margin for mobile view */}
+                <style jsx>{`
+                    @media (max-width: 768px) {
+                        .btns_group .btn-secondary {
+                            margin-bottom: 0 !important; /* Remove bottom margin for mobile view */
+                        }
+                    }
+                `}</style>
             </main>
         </Fragment>
     );

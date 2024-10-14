@@ -6,7 +6,7 @@ const FounderMessage = () => {
   return (
     <div>
       <div
-        className="container my-5 position-relative bg-primary" // Added bg-primary class
+        className="container my-5 position-relative bg-primary"
         style={{
           borderRadius: "15px",
           padding: "30px",
@@ -14,12 +14,28 @@ const FounderMessage = () => {
         }}
       >
         <div className="row align-items-center">
+          {/* Founder Image */}
+          <div className="col-12 col-md-4 text-center order-2 order-md-1"> {/* Changed order for mobile */}
+            <img
+              src={Founder}
+              alt="Sathish S, Founder & CEO"
+              className="img-fluid rounded-circle shadow"
+              style={{
+                width: "250px",
+                height: "250px",
+                objectFit: "cover",
+                border: "5px solid white",
+                marginBottom: "20px",
+              }}
+            />
+          </div>
+
           {/* Founder Message */}
-          <div className="col-12 col-md-8 order-2 order-md-1 mt-4 mt-md-0">
+          <div className="col-12 col-md-8 order-1 order-md-2 mt-4 mt-md-0"> {/* Changed order for mobile */}
             <div
               className="p-3 p-md-4"
               style={{
-                backgroundColor: "rgba(255, 255, 255, 0.9)", // Light background with transparency
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
                 borderRadius: "10px",
                 boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
               }}
@@ -40,36 +56,14 @@ const FounderMessage = () => {
               <p className="text-muted">Founder & CEO, Otomatiks</p>
             </div>
           </div>
-
-          {/* Founder Image */}
-          <div className="col-12 col-md-4 text-center order-1 order-md-2">
-            <img
-              src={Founder}
-              alt="Sathish S, Founder & CEO"
-              className="img-fluid rounded-circle shadow"
-              style={{
-                width: "250px", // Smaller size for mobile
-                height: "250px", // Maintain aspect ratio
-                objectFit: "cover",
-                border: "5px solid white",
-                marginBottom: "20px",
-              }}
-            />
-          </div>
         </div>
       </div>
 
       {/* Mobile Styles */}
       <style jsx>{`
         @media (max-width: 768px) {
-          .container {
-            padding: 15px; // Reduce padding for mobile view
-          }
           .row {
-            flex-direction: column-reverse; // Stack image above text on mobile
-          }
-          .text-center {
-            text-align: center; // Center align on mobile
+            flex-direction: column-reverse; /* Stack image above text on mobile */
           }
         }
       `}</style>

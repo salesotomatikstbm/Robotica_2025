@@ -127,7 +127,7 @@ const Hero = (props) => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="hotline_block" href="tel:+420318568511">
+                                    <a className="hotline_block" href="tel:+91 90432 09448">
                                         <span className="hotline_icon bg-primary">
                                             <i className="fa-solid fa-phone-volume "></i>
                                         </span>

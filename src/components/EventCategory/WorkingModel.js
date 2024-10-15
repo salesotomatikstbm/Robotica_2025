@@ -89,7 +89,7 @@ const WorkingModel = () => {
                                                     src={img}
                                                     alt={`Working Model Image ${index + 1}`}
                                                     className="img-fluid rounded shadow"
-                                                    style={{ width: '130%', height: '400px', objectFit: 'cover' }} // Set equal width and height
+                                                    style={{ width: '130%', height: '360px', objectFit: 'cover' }} // Set equal width and height
                                                 />
                                             </SwiperSlide>
                                         ))}

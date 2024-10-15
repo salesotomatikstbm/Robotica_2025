@@ -9,7 +9,7 @@ import newImage3 from '../../images/roborace/3.png';
 import newImage4 from '../../images/roborace/4.png';
 import newImage5 from '../../images/roborace/5.png';
 
-import pdf from '../../images/workingmodel.pdf';
+import pdf from '../../images/Roborace-Robotica-25.pdf';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]); // Enable Swiper modules
 
@@ -44,7 +44,7 @@ const RoboRace = () => {
                                                     src={img}
                                                     alt={`Robo Race Image ${index + 1}`}
                                                     className="img-fluid rounded shadow"
-                                                    style={{ width: '100%', height: '400px', objectFit: 'cover' }} // Set equal width and height
+                                                    style={{ width: '100%', height: '360px', objectFit: 'cover' }} // Set equal width and height
                                                 />
                                             </SwiperSlide>
                                         ))}

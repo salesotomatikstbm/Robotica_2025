@@ -26,6 +26,9 @@ const Hero = (props) => {
         >
             {/* Background Video Section */}
             <div className="background-video-wrapper bg-white">
+                <video className="bg-video" autoPlay muted loop>
+                    <source src="your-video-source.mp4" type="video/mp4" />
+                </video>
                 {/* Content with background video */}
                 <div className="content-with-bg">
                     <div className="hero_top_logo_wrap" style={{ textAlign: 'center', marginBottom: '10px', zIndex: 9999 }}>
@@ -34,16 +37,22 @@ const Hero = (props) => {
                             alt="Presenting Logo"
                             style={{ width: '300px', height: 'auto', marginBottom: '5px' }}
                         />
-                        <h2 style={{ marginTop: '0', fontSize: '16px', color: '' }}>
+                        <h2 style={{ marginTop: '0', fontSize: '16px' }}>
                             Proudly Presents
                         </h2>
                     </div>
                     <div className="hero_logo" style={{ textAlign: 'center', margin: '0 ' }}>
-                        <img src={placeholderLogo} alt="Main Logo" style={{ width: '600px', height: '120px', marginBottom: '20px' }} />
-                        <h2 style={{ marginTop: '0', fontSize: '24px', color: '' }}>
+                    <img
+    src={placeholderLogo}
+    alt="Main Logo"
+    className="main-logo img-fluid d-block mx-auto mb-3"
+    style={{ width: '65%', maxWidth: '600px', height: 'auto' }}
+/>
+
+                        <h2 style={{ marginTop: '0', fontSize: '24px' }}>
                             Unleashing Innovation in the World of Robotics
                         </h2>
-                        <h2 style={{ marginTop: '0', fontSize: '16px', color: '' }}>
+                        <h2 style={{ marginTop: '0', fontSize: '16px' }}>
                             VIT University, Vellore || 7th & 8th of February 2025
                         </h2>
                     </div>
@@ -208,6 +217,22 @@ const Hero = (props) => {
                 .content_with_bg {
                     padding-left: 10px !important;
                     z-index: 9999;
+                }
+                .main-logo {
+                    width: 600px;
+                    height: 120px;
+                }
+                @media (max-width: 767px) {
+                    .main-logo {
+                        width: 250px;
+                        height: auto;
+                    }
+                    h2 {
+                        font-size: 4vw; /* Dynamically scale heading text */
+                    }
+                    .video_wrap iframe {
+                        height: 200px; /* Adjust the video height for mobile */
+                    }
                 }
             `}</style>
         </section>

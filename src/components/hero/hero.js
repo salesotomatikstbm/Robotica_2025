@@ -53,7 +53,7 @@ const Hero = (props) => {
                             Unleashing Innovation in the World of Robotics
                         </h2>
                         <h2 style={{ marginTop: '0', fontSize: '16px' }}>
-                            VIT University, Vellore || 7th & 8th of February 2025
+                            VIT University, Chennai || 7th & 8th of February 2025
                         </h2>
                     </div>
                 </div>

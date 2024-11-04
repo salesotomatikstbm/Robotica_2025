@@ -9,7 +9,7 @@ import newImage3 from '../../images/roborace/3.png';
 import newImage4 from '../../images/roborace/4.png';
 import newImage5 from '../../images/roborace/5.png';
 
-import pdf from '../../images/Roborace-Robotica-25.pdf';
+import pdf from '../../images/Roborace- Robotica 2025.pdf';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]); // Enable Swiper modules
 
@@ -62,7 +62,7 @@ const RoboRace = () => {
                                     <ul className="event-themes-list ">
                                         <li><strong>Date:</strong> 7th February 2025</li>
                                         <li><strong>Time:</strong> 09:00 AM - 01:00 PM</li>
-                                        <li><strong>Venue:</strong> VIT University, Vellore</li>
+                                        <li><strong>Venue:</strong> VIT University, Chennai</li>
                                         <li><strong>Participation Fees:</strong> ₹ 800 /- only</li>
                                     </ul>
                                     

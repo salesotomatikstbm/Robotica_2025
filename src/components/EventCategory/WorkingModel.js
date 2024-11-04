@@ -16,7 +16,7 @@ import srImg10 from '../../images/workingmodel/10.png';
 import srImg11 from '../../images/workingmodel/11.png';
 import srImg12 from '../../images/workingmodel/12.png';
 import RoboRace from './RoboRace';
-import pdf from '../../images/workingmodel.pdf';
+import pdf from '../../images/Working model- Robotica 2025.pdf';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]); // Enable Swiper modules
 
@@ -41,7 +41,7 @@ const WorkingModel = () => {
                                     <ul className="event-themes-list mb-4">
                                         <li><strong>Date:</strong> 7th February 2025</li>
                                         <li><strong>Time:</strong> 09:00 AM - 01:00 PM</li>
-                                        <li><strong>Venue:</strong> VIT University, Vellore</li>
+                                        <li><strong>Venue:</strong> VIT University, Chennai</li>
                                         <li><strong>Participation Fees:</strong> ₹ 800 /- only</li>
                                     </ul>
                                 </div>

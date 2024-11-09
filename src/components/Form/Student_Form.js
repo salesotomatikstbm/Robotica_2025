@@ -12,6 +12,7 @@ const Student_Form = () => {
 
   const [formData, setFormData] = useState(initialState);
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false); // New state to handle submission status
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,8 +22,8 @@ const Student_Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Log the form data for debugging
-    console.log('Form Data to Submit:', formData);
+    setIsSubmitting(true); // Set submitting state to true to disable button and show loading
+    setMessage(''); // Clear any previous message
 
     const submissionData = new FormData();
     submissionData.append("Name", formData.studentName);
@@ -41,22 +42,22 @@ const Student_Form = () => {
       if (response.ok) {
         const responseData = await response.text();
         setMessage(responseData);
-
-        // Reset form to initial state after successful submission
-        setFormData(initialState);
+        setFormData(initialState); // Reset form after successful submission
       } else {
         setMessage("Network response was not ok.");
       }
     } catch (error) {
       console.error("Error:", error);
       setMessage("There was an error sending your message.");
+    } finally {
+      setIsSubmitting(false); // Reset the submitting state
     }
   };
 
   return (
     <div className="container mt-5" style={{ maxWidth: '600px' }}>
       <h2 className="text-center mb-4">Student Registration Form</h2>
-      <form onSubmit={handleSubmit} className="shadow-lg p-4 rounded-lg ">
+      <form onSubmit={handleSubmit} className="shadow-lg p-4 rounded-lg">
         
         <div className="mb-3">
           <label htmlFor="studentName" className="form-label fw-bold">Student Name</label>
@@ -99,9 +100,9 @@ const Student_Form = () => {
             required
           >
             <option value="">Select Grade</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            {["II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"].map((grade) => (
+              <option key={grade} value={grade}>{grade}</option>
+            ))}
           </select>
         </div>
 
@@ -116,9 +117,9 @@ const Student_Form = () => {
             required
           >
             <option value="">Select Level</option>
-            <option value="Beginner">Beginner</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Advanced">Advanced</option>
+            {["1", "2", "3", "4"].map((level) => (
+              <option key={level} value={level}>{level}</option>
+            ))}
           </select>
         </div>
 
@@ -152,15 +153,14 @@ const Student_Form = () => {
           </select>
         </div>
 
-        
         <button 
           type="submit" 
           className="btn btn-primary w-100 py-3 mt-3"
           style={{ fontSize: '16px', fontWeight: 'bold' }}
+          disabled={isSubmitting} // Disable button while submitting
         >
-          Submit
+          {isSubmitting ? 'Submitting...' : 'Submit'}
         </button>
-
 
         {message && <p className="mt-3 text-center">{message}</p>}
       </form>

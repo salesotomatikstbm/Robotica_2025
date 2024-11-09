@@ -55,9 +55,8 @@ const Student_Form = () => {
 
   return (
     <div className="container mt-5" style={{ maxWidth: '600px' }}>
-      <h2 className="text-center mb-4">Robotica 2025</h2>
       <h2 className="text-center mb-4">Student Registration Form</h2>
-      <form onSubmit={handleSubmit} className="shadow-lg p-4 rounded-lg bg-blue">
+      <form onSubmit={handleSubmit} className="shadow-lg p-4 rounded-lg ">
         
         <div className="mb-3">
           <label htmlFor="studentName" className="form-label fw-bold">Student Name</label>
@@ -100,17 +99,9 @@ const Student_Form = () => {
             required
           >
             <option value="">Select Grade</option>
-            <option value="II">II</option>
-            <option value="III">III</option>
-            <option value="IV">IV</option>
-            <option value="V">V</option>
-            <option value="VI">VI</option>
-            <option value="VII">VII</option>
-            <option value="VIII">VIII</option>
-            <option value="IX">IX</option>
-            <option value="X">X</option>
-            <option value="XI">XI</option>
-            <option value="XII">XII</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
         </div>
 
@@ -125,10 +116,9 @@ const Student_Form = () => {
             required
           >
             <option value="">Select Level</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
           </select>
         </div>
 
@@ -162,6 +152,7 @@ const Student_Form = () => {
           </select>
         </div>
 
+        
         <button 
           type="submit" 
           className="btn btn-primary w-100 py-3 mt-3"
@@ -169,6 +160,7 @@ const Student_Form = () => {
         >
           Submit
         </button>
+
 
         {message && <p className="mt-3 text-center">{message}</p>}
       </form>

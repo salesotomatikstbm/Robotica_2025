@@ -155,6 +155,9 @@ const Student_Form = () => {
         </div>
 
         {/* Submit Button */}
+        <div>
+
+       
         <button 
           type="submit" 
           className="btn btn-primary w-50 py-3"
@@ -166,7 +169,7 @@ const Student_Form = () => {
           {isSubmitting ? 'Submitting...' : 'Submit'}
           {isSubmitting && <span className="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>}
         </button>
-
+        </div>
         {message && <p className="mt-3 text-center">{message}</p>}
       </form>
     </div>

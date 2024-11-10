@@ -17,6 +17,8 @@ import Footer from '../../components/Footer/Footer';
 import FounderMessage from '../../components/Founder Message/FounderMessage';
 import OfferCountdown from '../../components/TimeZone/OfferCountdown';
 import './HomePage.css'; // Import custom CSS for styles
+import Hero1 from '../../components/hero/hero1';
+import RoboticaInfo from '../../components/hero/RoboticaInfo';
 
 const HomePage = () => {
     useEffect(() => {
@@ -46,9 +48,15 @@ const HomePage = () => {
     return (
         <Fragment>
             <div>
-                <main className="">
+                <main >
+                {/* style={{
+                                    backgroundColor: '#066aab',
+                                   
+                                }} */}
                     <section id="hero" className="" data-aos="fade-up" data-aos-duration="1000">
-                        <Hero />
+                        {/* <Hero /> */}
+                        <Hero1 />
+                        <RoboticaInfo />
                     </section>
                     <div className="container main-content">
 

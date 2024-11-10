@@ -120,13 +120,16 @@ mark {
 }
 
 .container {
-	max-width: 1320px;
-	padding-left: 15px;
-	padding-right: 15px;
+	width: 100%;
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 10px;  /* Standard padding for better spacing */
+	padding-right: 10px;
 }
 .container-fluid {
-	padding-left: 30px;
-	padding-right: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 .row {
 	margin: -15px;

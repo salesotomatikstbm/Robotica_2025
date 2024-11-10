@@ -29,7 +29,7 @@ const About = () => {
     }, [images.length]);
 
     return (
-        <section className="service_section section_space bg-white">
+        <section className="bg-white">
             <div className="container">
                 <div className="row align-items-center justify-content-lg-between">
                     <div className="col-lg-6">

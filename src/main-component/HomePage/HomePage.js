@@ -54,9 +54,9 @@ const HomePage = () => {
                                    
                                 }} */}
                     <section id="hero" className="" data-aos="fade-up" data-aos-duration="1000">
-                        {/* <Hero /> */}
-                        <Hero1 />
-                        <RoboticaInfo />
+                        <Hero />
+                        {/* <Hero1 />
+                        <RoboticaInfo /> */}
                     </section>
                     <div className="container main-content">
 

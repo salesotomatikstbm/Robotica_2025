@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './StudentForm.css';
 const Student_Form = () => {
   const initialState = {
     studentName: '',
@@ -12,7 +12,7 @@ const Student_Form = () => {
 
   const [formData, setFormData] = useState(initialState);
   const [message, setMessage] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false); // New state to handle submission status
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,8 +22,8 @@ const Student_Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setIsSubmitting(true); // Set submitting state to true to disable button and show loading
-    setMessage(''); // Clear any previous message
+    setIsSubmitting(true);
+    setMessage('');
 
     const submissionData = new FormData();
     submissionData.append("Name", formData.studentName);
@@ -34,7 +34,7 @@ const Student_Form = () => {
     submissionData.append("TrainerName", formData.trainerName);
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbzTFeURxzQgsZ0aqu6cy9Qi1tkuQWKKnNt4o3GQg81G5HVH9ikS14dqVU7jMWXty8fBow/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbyjbQ3qOmJM6aq1JUBMQJW5IqR_RvdmEfKLW4dJ600W8DVpLVrPN3pZq9zkmc2a_29r1Q/exec", {
         method: "POST",
         body: submissionData,
       });
@@ -59,6 +59,7 @@ const Student_Form = () => {
       <h2 className="text-center mb-4">Student Registration Form</h2>
       <form onSubmit={handleSubmit} className="shadow-lg p-4 rounded-lg">
         
+        {/* Form Fields */}
         <div className="mb-3">
           <label htmlFor="studentName" className="form-label fw-bold">Student Name</label>
           <input
@@ -71,7 +72,7 @@ const Student_Form = () => {
             required
           />
         </div>
-
+        {/* School Name Field */}
         <div className="mb-3">
           <label htmlFor="schoolName" className="form-label fw-bold">School Name</label>
           <select
@@ -88,7 +89,7 @@ const Student_Form = () => {
             <option value="School C">School C</option>
           </select>
         </div>
-
+        {/* Grade Field */}
         <div className="mb-3">
           <label htmlFor="grade" className="form-label fw-bold">Grade</label>
           <select
@@ -105,7 +106,7 @@ const Student_Form = () => {
             ))}
           </select>
         </div>
-
+        {/* Level Field */}
         <div className="mb-3">
           <label htmlFor="level" className="form-label fw-bold">Level</label>
           <select
@@ -122,7 +123,7 @@ const Student_Form = () => {
             ))}
           </select>
         </div>
-
+        {/* Contact Number Field */}
         <div className="mb-3">
           <label htmlFor="contactNumber" className="form-label fw-bold">Contact Number</label>
           <input
@@ -135,7 +136,7 @@ const Student_Form = () => {
             required
           />
         </div>
-
+        {/* Trainer Name Field */}
         <div className="mb-3">
           <label htmlFor="trainerName" className="form-label fw-bold">Trainer Name</label>
           <select
@@ -153,13 +154,17 @@ const Student_Form = () => {
           </select>
         </div>
 
+        {/* Submit Button */}
         <button 
           type="submit" 
           className="btn btn-primary w-100 py-3 mt-3"
-          style={{ fontSize: '16px', fontWeight: 'bold' }}
-          disabled={isSubmitting} // Disable button while submitting
+          style={{ fontSize: '16px', fontWeight: 'bold', cursor: 'pointer', transition: '0.3s', opacity: isSubmitting ? 0.6 : 1 }}
+          disabled={isSubmitting}
+          onMouseEnter={(e) => e.target.style.backgroundColor = '#0056b3'}
+          onMouseLeave={(e) => e.target.style.backgroundColor = '#007bff'}
         >
           {isSubmitting ? 'Submitting...' : 'Submit'}
+          {isSubmitting && <span className="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>}
         </button>
 
         {message && <p className="mt-3 text-center">{message}</p>}

@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react';
-import ModalVideo from 'react-modal-video'; // Import ModalVideo
 import srImg from '../../images/services/service_details_image_1.png';
 // Import all 16 images
 import img1 from '../../images/Glimps/1.png';
@@ -20,86 +19,130 @@ import img15 from '../../images/Glimps/15.JPG';
 import img16 from '../../images/Glimps/16.JPG';
 
 const Glimpse = () => {
-  const [isOpen, setOpen] = useState(false); // Modal state handler
+  const [isVideoOpen, setVideoOpen] = useState(false); // Video modal state handler
+
+  // Array of gallery images
+  const galleryImages = [
+    img1, img2, img3, img4, img5, img6, img7, img8,
+    img9, img10, img11, img12, img13, img14, img15, img16
+  ];
 
   return (
     <Fragment>
       <main className="bg-white">
         <section className="service_details_section">
           <div className="container">
-            <h2 className="heading_text text-center heading_block text-primary">
+            <h2 className="heading_text text-center text-primary mb-4">
               Glimpse of ROBOTICA 2024
             </h2>
 
             {/* Video Section */}
-            <div className="details_item_image position-relative mb-4">
-              <img 
-                src={srImg} 
-                alt="Service Details" 
-                className="img-fluid w-100" 
-                style={{ maxWidth: '100%', height: 'auto' }} // Ensure responsive image
-              />
-              {/* Video Play Button */}
-              <button 
-                className="video_btn ripple_effect" 
-                onClick={() => setOpen(true)} // Open modal onClick
+            <div className="video_section position-relative mb-4">
+              <img src={srImg} alt="Service Details" className="img-fluid w-100" />
+              <button
+                className="video_btn ripple_effect"
+                onClick={() => setVideoOpen(true)}
                 style={{
-                  position: 'absolute', 
-                  top: '50%', 
-                  left: '50%', 
-                  transform: 'translate(-50%, -50%)', // Center the button
-                  backgroundColor: 'rgba(0, 0, 0, 0.6)', 
-                  borderRadius: '50%', 
-                  padding: '15px', 
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                  borderRadius: '50%',
+                  padding: '15px',
                   border: 'none',
                   cursor: 'pointer',
-                  zIndex: 10 // Ensure button appears above the image
+                  zIndex: 10
                 }}
               >
-                <span className="btn_icon">
-                  <i className="fa-solid fa-play" style={{ color: '#fff', fontSize: '24px' }}></i>
-                </span>
+                <i className="fa-solid fa-play" style={{ color: '#fff', fontSize: '24px' }}></i>
               </button>
             </div>
 
             {/* Images Gallery */}
             <div className="row">
-              {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16].map((imgSrc, index) => (
+              {galleryImages.map((imgSrc, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                  <img src={imgSrc} alt={`Gallery Image ${index + 1}`} className="img-fluid" style={{ height: 'auto', width: '100%' }} />
+                  <img src={imgSrc} alt={`Gallery Image ${index + 1}`} className="img-fluid" />
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        {/* Full-Screen Video Modal */}
+        {isVideoOpen && (
+          <div
+            className="video_modal"
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '90vw',
+              height: '90vh',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 1000,
+              overflow: 'hidden'
+            }}
+          >
+            <iframe
+              width="80%"
+              height="80%"
+              src="https://www.youtube.com/embed/uC-K8NP2Khw?autoplay=1" // Automatically play video in full screen
+              title="YouTube video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+              style={{
+                borderRadius: '8px',
+                maxWidth: '80%',
+                maxHeight: '80%',
+                aspectRatio: '16 / 9',
+                display: 'block',
+                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.5)'
+              }}
+            ></iframe>
+            <button
+              className="close_btn"
+              onClick={() => setVideoOpen(false)}
+              style={{
+                position: 'absolute',
+                top: '20px',
+                right: '20px',
+                backgroundColor: '#fff',
+                color: '#000',
+                border: 'none',
+                borderRadius: '50%',
+                width: '30px',
+                height: '30px',
+                fontSize: '20px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                textAlign: 'center'
+              }}
+            >
+              &times;
+            </button>
+          </div>
+        )}
       </main>
 
-      {/* Modal Video */}
-      <ModalVideo 
-        channel='youtube' 
-        autoplay 
-        isOpen={isOpen} 
-        videoId="uC-K8NP2Khw" // Replace with your YouTube video ID
-        onClose={() => setOpen(false)} // Close modal when user clicks outside or the close button
-        className="modal-video" // Optional: add a custom class for additional styling if needed
-      />
-      
+      {/* Media Queries for Desktop and Mobile Views */}
       <style jsx>{`
-        .modal-video {
-          top: -25%; // Adjust to position modal higher
-        }
-        .modal-video .modal-dialog {
-          margin: 0 auto; // Center the modal horizontally
-          position: absolute; // Set position to absolute
-          width: 90%; // Ensure modal width is responsive
-          max-width: 800px; // Set a max width for larger screens
-        }
-        @media (max-width: 768px) {
-          .modal-video {
-            top: -90%; // Adjust modal position for mobile view
+        /* Mobile View */
+        @media (max-width: 767px) {
+          .video_modal iframe {
+            width: 100% !important;
+            height: 100% !important;
           }
-          .modal-video .modal-dialog {
-            width: 95%; // Make modal wider for small screens
+        }
+
+        /* Desktop View */
+        @media (min-width: 768px) {
+          .video_modal iframe {
+            width: 80% !important;
+            height: 80% !important;
           }
         }
       `}</style>

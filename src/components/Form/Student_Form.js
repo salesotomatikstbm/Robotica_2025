@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './StudentForm.css';
+
 const Student_Form = () => {
   const initialState = {
     studentName: '',
@@ -58,8 +59,7 @@ const Student_Form = () => {
     <div className="container mt-5" style={{ maxWidth: '600px' }}>
       <h2 className="text-center mb-4">Student Registration Form</h2>
       <form onSubmit={handleSubmit} className="shadow-lg p-4 rounded-lg">
-        
-        {/* Form Fields */}
+   
         <div className="mb-3">
           <label htmlFor="studentName" className="form-label fw-bold">Student Name</label>
           <input
@@ -155,23 +155,24 @@ const Student_Form = () => {
         </div>
 
         {/* Submit Button */}
-        <div>
-
-       
+        <div className='mt-3'>
         <button 
           type="submit" 
-          className="btn btn-primary w-50 py-3"
-          style={{ fontSize: '16px', fontWeight: 'bold', cursor: 'pointer', transition: '0.3s', opacity: isSubmitting ? 0.6 : 1 }}
+          className="btn btn-primary w-100 p-3"
+          style={{ fontSize: '16px', fontWeight: 'bold', cursor: 'pointer'}}
           disabled={isSubmitting}
-          onMouseEnter={(e) => e.target.style.backgroundColor = '#0056b3'}
-          onMouseLeave={(e) => e.target.style.backgroundColor = '#007bff'}
         >
           {isSubmitting ? 'Submitting...' : 'Submit'}
           {isSubmitting && <span className="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>}
         </button>
+        </div >
+
+        <div  className="p-3">       
+        {message && <p className="text-center">{message}</p>}
         </div>
-        {message && <p className="mt-3 text-center">{message}</p>}
       </form>
+      
+  
     </div>
   );
 };

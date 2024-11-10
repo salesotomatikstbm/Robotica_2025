@@ -17,7 +17,13 @@ const Student_Form = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+
+    // Convert student name to uppercase
+    if (name === "studentName") {
+      setFormData({ ...formData, [name]: value.toUpperCase() });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const validatePhoneNumber = (contactNumber) => {

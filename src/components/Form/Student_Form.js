@@ -20,8 +20,20 @@ const Student_Form = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const validatePhoneNumber = (contactNumber) => {
+    // Simple validation for 10-digit phone number (change pattern as needed)
+    const phoneRegex = /^[0-9]{10}$/;
+    return phoneRegex.test(contactNumber);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate contact number
+    if (!validatePhoneNumber(formData.contactNumber)) {
+      setMessage('Please enter a valid 10-digit contact number.');
+      return;
+    }
 
     setIsSubmitting(true);
     setMessage('');
@@ -61,7 +73,7 @@ const Student_Form = () => {
       <form onSubmit={handleSubmit} className="shadow-lg p-4 rounded-lg">
    
         <div className="mb-3">
-          <label htmlFor="studentName" className="form-label fw-bold">Student Name</label>
+          <label htmlFor="studentName" className="form-label fw-bold">Student Name <span className="text-danger">*</span></label>
           <input
             type="text"
             className="form-control"
@@ -74,7 +86,7 @@ const Student_Form = () => {
         </div>
         {/* School Name Field */}
         <div className="mb-3">
-          <label htmlFor="schoolName" className="form-label fw-bold">School Name</label>
+          <label htmlFor="schoolName" className="form-label fw-bold">School Name <span className="text-danger">*</span></label>
           <select
             className="form-select"
             id="schoolName"
@@ -91,7 +103,7 @@ const Student_Form = () => {
         </div>
         {/* Grade Field */}
         <div className="mb-3">
-          <label htmlFor="grade" className="form-label fw-bold">Grade</label>
+          <label htmlFor="grade" className="form-label fw-bold">Grade <span className="text-danger">*</span></label>
           <select
             className="form-select"
             id="grade"
@@ -108,7 +120,7 @@ const Student_Form = () => {
         </div>
         {/* Level Field */}
         <div className="mb-3">
-          <label htmlFor="level" className="form-label fw-bold">Level</label>
+          <label htmlFor="level" className="form-label fw-bold">Level <span className="text-danger">*</span></label>
           <select
             className="form-select"
             id="level"
@@ -125,7 +137,7 @@ const Student_Form = () => {
         </div>
         {/* Contact Number Field */}
         <div className="mb-3">
-          <label htmlFor="contactNumber" className="form-label fw-bold">Contact Number</label>
+          <label htmlFor="contactNumber" className="form-label fw-bold">Contact Number <span className="text-danger">*</span></label>
           <input
             type="tel"
             className="form-control"
@@ -134,11 +146,13 @@ const Student_Form = () => {
             value={formData.contactNumber}
             onChange={handleChange}
             required
+            pattern="[0-9]{10}"
+            title="Please enter a valid 10-digit contact number"
           />
         </div>
         {/* Trainer Name Field */}
         <div className="mb-3">
-          <label htmlFor="trainerName" className="form-label fw-bold">Trainer Name</label>
+          <label htmlFor="trainerName" className="form-label fw-bold">Trainer Name <span className="text-danger">*</span></label>
           <select
             className="form-select"
             id="trainerName"
@@ -156,23 +170,21 @@ const Student_Form = () => {
 
         {/* Submit Button */}
         <div className='mt-3'>
-        <button 
-          type="submit" 
-          className="btn btn-primary w-100 p-3"
-          style={{ fontSize: '16px', fontWeight: 'bold', cursor: 'pointer'}}
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? 'Submitting...' : 'Submit'}
-          {isSubmitting && <span className="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>}
-        </button>
-        </div >
+          <button 
+            type="submit" 
+            className="btn btn-primary w-100 p-3"
+            style={{ fontSize: '16px', fontWeight: 'bold', cursor: 'pointer'}}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit'}
+            {isSubmitting && <span className="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>}
+          </button>
+        </div>
 
-        <div  className="p-3">       
-        {message && <p className="text-center">{message}</p>}
+        <div className="p-3">       
+          {message && <p className="text-center">{message}</p>}
         </div>
       </form>
-      
-  
     </div>
   );
 };

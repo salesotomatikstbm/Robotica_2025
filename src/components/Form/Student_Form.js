@@ -157,7 +157,7 @@ const Student_Form = () => {
         {/* Submit Button */}
         <button 
           type="submit" 
-          className="btn btn-primary w-100 py-3 mt-3"
+          className="btn btn-primary w-50 py-3"
           style={{ fontSize: '16px', fontWeight: 'bold', cursor: 'pointer', transition: '0.3s', opacity: isSubmitting ? 0.6 : 1 }}
           disabled={isSubmitting}
           onMouseEnter={(e) => e.target.style.backgroundColor = '#0056b3'}

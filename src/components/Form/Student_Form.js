@@ -1,6 +1,84 @@
 import React, { useState } from 'react';
 import './StudentForm.css';
 
+const schoolData = [
+  { schoolName: 'ARYA VIDHYASSHRAM, INTERNATIONAL RESIDENTIAL SCHOOL', district: 'VELLORE' },
+  { schoolName: 'ASHIRWAD INTERNATIONAL SCHOOL', district: 'VELLORE' },
+  { schoolName: 'BALSAM ACADEMY', district: 'VELLORE' },
+  { schoolName: 'BRUNDAVAN ENGLISH MEDIUM SCHOOL', district: 'VELLORE' },
+  { schoolName: 'HINDU VIDYALAYA CBSE SCHOOL', district: 'VELLORE' },
+  { schoolName: 'JEYAMALLI INTERNATIONAL SCHOOL', district: 'VELLORE' },
+  { schoolName: 'THE KRISAR ACADEMY', district: 'VELLORE' },
+  { schoolName: 'KSR MITIKAS PUBLIC SCHOOL', district: 'VELLORE' },
+  { schoolName: 'LAKSHMI GARDEN SCHOOL', district: 'VELLORE' },
+  { schoolName: 'MAYFLOWER SCHOOL(CMC)', district: 'VELLORE' },
+  { schoolName: 'MAYFLOWER KIDS (GN)', district: 'VELLORE' },
+  { schoolName: 'MOTHER TERESA ENGLISH MEDIUM SCHOOL', district: 'VELLORE' },
+  { schoolName: 'PINKZ PUBLIC SCHOOL', district: 'VELLORE' },
+  { schoolName: 'RATHINAGIRI BAGEERATHAN MATRICULATION HR SEC SCHOOL', district: 'VELLORE' },
+  { schoolName: 'SAI GURUJI ELITE SCHOOL', district: 'VELLORE' },
+  { schoolName: 'SHRI SHANTHINIKETHAN SCHOOL (SNMS)', district: 'VELLORE' },
+  { schoolName: 'SRI NARAYANI VIDYASHRAM SR.SEC SCHOOL', district: 'VELLORE' },
+  { schoolName: 'SPRING DAYS CBSE SCHOOL', district: 'VELLORE' },
+  { schoolName: 'St.JOHN\'S GROUP OF SCHOOLS', district: 'VELLORE' },
+  { schoolName: 'TULIP INTERNATIONAL SCHOOL', district: 'VELLORE' },
+  { schoolName: 'VIDYANIKETAN MATRIC. HR. SEC. SCHOOL', district: 'VELLORE' },
+  { schoolName: 'VELLORE INTERNATIONAL SCHOOL', district: 'VELLORE' },
+  { schoolName: 'ST. ANTONY\'S PUBLIC SCHOOL (CBSE)', district: 'TIRUNELVELI' },
+  { schoolName: 'SCAD INTERNATIONAL SCHOOL', district: 'TIRUNELVELI' },
+  { schoolName: 'VSR INTERNATIONAL SCHOOL', district: 'TIRUNELVELI' },
+  { schoolName: 'GOOD SHEPHERD SCHOOL', district: 'TIRUNELVELI' },
+  { schoolName: 'FRANCIS XAVIER SCHOOL', district: 'TIRUNELVELI' },
+  { schoolName: 'PANNAI PUBLIC', district: 'DINDIGUL' },
+  { schoolName: 'PANNAI MATRIC', district: 'DINDIGUL' },
+  { schoolName: 'THNU', district: 'DINDIGUL' },
+  { schoolName: 'MEENAKSHI', district: 'DINDIGUL' },
+  { schoolName: 'SINDINI MODEL', district: 'CHENNAI' },
+  { schoolName: 'GGN INTERNATIONAL', district: 'CHENNAI' },
+  { schoolName: 'SRI VENKATESHWARA', district: 'CHENNAI' },
+  { schoolName: 'SRI BALA VIDYALAYA', district: 'CHENNAI' },
+  { schoolName: 'THIRUVALLUVAR VIDYASHARAM', district: 'CHENNAI' },
+  { schoolName: 'PUMS GOVT SCHOOL (PANGAYAT UNION MUNICIPALTY SCHOOL VASANTHANADAI)', district: 'VELLORE' },
+  { schoolName: 'SVM ANANDHAASHRAMAM', district: 'SALEM' },
+  { schoolName: 'SVM SHIVAJI NAGAR', district: 'SALEM' },
+  { schoolName: 'SVM SHEVAPET', district: 'SALEM' },
+  { schoolName: 'SVM KONDALAMPATTY', district: 'SALEM' },
+  { schoolName: 'SVM AYOTHIYAPATTINAM', district: 'SALEM' },
+  { schoolName: 'SVM KANNANKURICHI', district: 'SALEM' },
+  { schoolName: 'SENTHIL PUBLIC SCHOOL', district: 'DHARAMAPURI' },
+  { schoolName: 'SENTHIL PUBLIC SCHOOL', district: 'SALEM' },
+  { schoolName: 'CLUNEY VIDYA NIKETHAN SCHOOL(CBSE)', district: 'SALEM' },
+  { schoolName: 'SRK MATRIC HR SEC SCHOOL', district: 'SALEM' },
+  { schoolName: 'SRK GLOBAL SCHOOL', district: 'SALEM' },
+  { schoolName: 'SRI RAM VIDYALAYA', district: 'SALEM' },
+  { schoolName: 'RASI VIDYASHRAMAM CBSE', district: 'SALEM' },
+  { schoolName: 'MONFORT SCHOOL', district: 'SALEM' },
+  { schoolName: 'HINDU GLOBAL SCHOOL', district: 'SALEM' },
+  { schoolName: 'SARATHA NEWGEN SCHOOL', district: 'SALEM' },
+  { schoolName: 'BUDDING MINDS INTERNATIONAL SCHOOL', district: 'TAMBARAM' },
+  { schoolName: 'SHANTHOSH VIDYALAYA MATRIC HIGHER SECONDARY SCHOOL', district: 'TAMBARAM' },
+  { schoolName: 'CEOA MATRIC HIGHER SECONDARY SCHOOL', district: 'THENI' },
+  { schoolName: 'VIVEKA MATRICULATION SCHOOL', district: 'NAMAKKAL' },
+  { schoolName: 'BHARATHIYAR HI TECH INTERNATIONAL SCHOOL (CBSE)', district: 'ATTUR' },
+  { schoolName: 'BHARATHIYAR MATRIC HIGHER SECONDARY SCHOOL', district: 'ATTUR' },
+  { schoolName: 'OAC-VELLORE', district: 'OAC' },
+  { schoolName: 'OAC-PARRYS', district: 'OAC' },
+  { schoolName: 'OAC-SALEM', district: 'OAC' },
+  { schoolName: 'OAC-TAMBARAM', district: 'OAC' },
+  { schoolName: 'OAC-ANNA NAGAR', district: 'OAC' },
+  { schoolName: 'OAC-DINDUGAL', district: 'OAC' },
+  { schoolName: 'OAC-THENI', district: 'OAC' },
+  { schoolName: 'OAC-MADURAI', district: 'OAC' },
+  { schoolName: 'OAC-NAMAKKAL', district: 'OAC' },
+  { schoolName: 'OAC-ATTUR', district: 'OAC' },
+  { schoolName: 'OAC-GUDIYATHAM', district: 'OAC' },
+  { schoolName: 'OAC-MUMBAI', district: 'OAC' },
+  { schoolName: 'OAC-UK', district: 'OAC' },
+]
+;
+
+const districts = [...new Set(schoolData.map((school) => school.district))]; // Unique districts
+
 const Student_Form = () => {
   const initialState = {
     studentName: '',
@@ -10,7 +88,8 @@ const Student_Form = () => {
     contactNumber: '',
     trainerName: '',
     event: '', 
-    submissionTime: '' 
+    submissionTime: '', 
+    district: '' // Adding district to form state
   };
 
   const [formData, setFormData] = useState(initialState);
@@ -19,8 +98,6 @@ const Student_Form = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    // Convert student name to uppercase
     if (name === "studentName") {
       setFormData({ ...formData, [name]: value.toUpperCase() });
     } else {
@@ -29,14 +106,12 @@ const Student_Form = () => {
   };
 
   const validatePhoneNumber = (contactNumber) => {
-    // Simple validation for 10-digit phone number (change pattern as needed)
     const phoneRegex = /^[0-9]{10}$/;
     return phoneRegex.test(contactNumber);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
    
     const currentDate = new Date().toLocaleDateString('en-IN', {
       timeZone: 'Asia/Kolkata', 
@@ -50,8 +125,6 @@ const Student_Form = () => {
       submissionTime: currentDate 
     }));
     
-    
-    // Validate contact number
     if (!validatePhoneNumber(formData.contactNumber)) {
       setMessage('Please enter a valid 10-digit contact number.');
       return;
@@ -67,8 +140,8 @@ const Student_Form = () => {
     submissionData.append("Level", formData.level);
     submissionData.append("ContactNumber", formData.contactNumber);
     submissionData.append("TrainerName", formData.trainerName);
-    submissionData.append("Event", formData.event); // Add event to submission
-    submissionData.append("SubmissionTime", formData.submissionTime); // Add submission time to the form data
+    submissionData.append("Event", formData.event);
+    submissionData.append("SubmissionTime", formData.submissionTime);
 
     try {
       const response = await fetch("https://script.google.com/macros/s/AKfycbxSiE70_4JPo2XvLOp-963BWwyK6I8m_Je_TDUjYURHVafD_pa9xT6Nh4QU_tLhmEYgkw/exec", {
@@ -79,7 +152,7 @@ const Student_Form = () => {
       if (response.ok) {
         const responseData = await response.text();
         setMessage(responseData);
-        setFormData(initialState); // Reset form after successful submission
+        setFormData(initialState);
       } else {
         setMessage("Network response was not ok.");
       }
@@ -87,15 +160,16 @@ const Student_Form = () => {
       console.error("Error:", error);
       setMessage("There was an error sending your message.");
     } finally {
-      setIsSubmitting(false); // Reset the submitting state
+      setIsSubmitting(false);
     }
   };
+
+  const filteredSchools = schoolData.filter((school) => school.district === formData.district);
 
   return (
     <div className="container mt-5" style={{ maxWidth: '600px' }}>
       <h2 className="text-center mb-4">Student Registration Form</h2>
       <form onSubmit={handleSubmit} className="shadow-lg p-4 rounded-lg">
-   
         <div className="mb-3">
           <label htmlFor="studentName" className="form-label fw-bold">Student Name <span className="text-danger">*</span></label>
           <input
@@ -109,6 +183,24 @@ const Student_Form = () => {
           />
         </div>
 
+        {/* District Selection */}
+        <div className="mb-3">
+          <label htmlFor="district" className="form-label fw-bold">District <span className="text-danger">*</span></label>
+          <select
+            className="form-select"
+            id="district"
+            name="district"
+            value={formData.district}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select District</option>
+            {districts.map((district) => (
+              <option key={district} value={district}>{district}</option>
+            ))}
+          </select>
+        </div>
+
         {/* School Name Field */}
         <div className="mb-3">
           <label htmlFor="schoolName" className="form-label fw-bold">School Name <span className="text-danger">*</span></label>
@@ -119,16 +211,17 @@ const Student_Form = () => {
             value={formData.schoolName}
             onChange={handleChange}
             required
+            disabled={!formData.district} // Disable if no district is selected
           >
             <option value="">Select School</option>
-            <option value="School A">School A</option>
-            <option value="School B">School B</option>
-            <option value="School C">School C</option>
+            {filteredSchools.map((school) => (
+              <option key={school.schoolName} value={school.schoolName}>{school.schoolName}</option>
+            ))}
           </select>
         </div>
 
-        {/* Grade Field */}
-        <div className="mb-3">
+       {/* Grade Field */}
+       <div className="mb-3">
           <label htmlFor="grade" className="form-label fw-bold">Grade <span className="text-danger">*</span></label>
           <select
             className="form-select"
@@ -167,8 +260,8 @@ const Student_Form = () => {
         <div className="mb-3">
           <label className="form-label fw-bold">Event <span className="text-danger">*</span></label>
           <div className="d-flex flex-column flex-md-row">
-            {["Working Model", "RoboRace", "Workshop"].map((event) => (
-              <div key={event} className="form-check mb-2 mb-md-0 me-md-4"> {/* Added margin-right for spacing */}
+            {["Working Model", "RoboRace", "Inschool"].map((event) => (
+              <div key={event} className="form-check mb-2 mb-md-0 me-md-4">
                 <input
                   type="radio"
                   id={event}
@@ -226,8 +319,7 @@ const Student_Form = () => {
           value={formData.submissionTime}
         />
 
-        {/* Submit Button */}
-        <div className='mt-3'>
+        <div className="mt-3">
           <button 
             type="submit" 
             className="btn btn-primary w-100 p-3"
@@ -240,16 +332,13 @@ const Student_Form = () => {
         </div>
       </form>
 
-<div className='p-5'>
-      {/* Message Display */}
-      {message && (
-        <div className="alert alert-info">
-          {message}
-        </div>
-      )}
-    </div>
-
-    
+      <div className='p-5'>
+        {message && (
+          <div className="alert alert-info">
+            {message}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

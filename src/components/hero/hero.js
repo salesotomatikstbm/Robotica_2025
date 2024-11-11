@@ -154,7 +154,7 @@ const Hero = (props) => {
                             <Slider {...sliderSettings}>
                                 <div>
                                     <iframe
-                                        width="100%"
+                                        width="95%"
                                         height="350"
                                         src="https://www.youtube.com/embed/KcjSdEJ0CAA"
                                         title="YouTube Video 1"
@@ -166,7 +166,7 @@ const Hero = (props) => {
                                 </div>
                                 <div>
                                     <iframe
-                                        width="100%"
+                                        width="95%"
                                         height="350"
                                         src="https://www.youtube.com/embed/0G-QfbasgEw"
                                         title="YouTube Video 2"

@@ -194,7 +194,7 @@ const Student_Form = () => {
             onChange={handleChange}
             required
           >
-            <option value="">Select District</option>
+            <option value="">Select Branch</option>
             {districts.map((district) => (
               <option key={district} value={district}>{district}</option>
             ))}

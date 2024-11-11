@@ -2,6 +2,42 @@ import React, { useState } from 'react';
 import './StudentForm.css';
 
 const schoolData = [
+  { schoolName: 'BHARATHIYAR HI TECH INTERNATIONAL SCHOOL (CBSE)', district: 'ATTUR' },
+  { schoolName: 'BHARATHIYAR MATRIC HIGHER SECONDARY SCHOOL', district: 'ATTUR' },
+  { schoolName: 'SINDINI MODEL', district: 'CHENNAI' },
+  { schoolName: 'GGN INTERNATIONAL', district: 'CHENNAI' },
+  { schoolName: 'SRI VENKATESHWARA', district: 'CHENNAI' },
+  { schoolName: 'SRI BALA VIDYALAYA', district: 'CHENNAI' },
+  { schoolName: 'THIRUVALLUVAR VIDYASHARAM', district: 'CHENNAI' },
+  { schoolName: 'PANNAI PUBLIC', district: 'DINDIGUL' },
+  { schoolName: 'PANNAI MATRIC', district: 'DINDIGUL' },
+  { schoolName: 'THNU', district: 'DINDIGUL' },
+  { schoolName: 'MEENAKSHI', district: 'DINDIGUL' },
+  { schoolName: 'SENTHIL PUBLIC SCHOOL', district: 'DHARAMAPURI' },
+  { schoolName: 'VIVEKA MATRICULATION SCHOOL', district: 'NAMAKKAL' },
+  { schoolName: 'SVM ANANDHAASHRAMAM', district: 'SALEM' },
+  { schoolName: 'SVM SHIVAJI NAGAR', district: 'SALEM' },
+  { schoolName: 'SVM SHEVAPET', district: 'SALEM' },
+  { schoolName: 'SVM KONDALAMPATTY', district: 'SALEM' },
+  { schoolName: 'SVM AYOTHIYAPATTINAM', district: 'SALEM' },
+  { schoolName: 'SVM KANNANKURICHI', district: 'SALEM' },
+  { schoolName: 'SENTHIL PUBLIC SCHOOL', district: 'SALEM' },
+  { schoolName: 'CLUNEY VIDYA NIKETHAN SCHOOL(CBSE)', district: 'SALEM' },
+  { schoolName: 'SRK MATRIC HR SEC SCHOOL', district: 'SALEM' },
+  { schoolName: 'SRK GLOBAL SCHOOL', district: 'SALEM' },
+  { schoolName: 'SRI RAM VIDYALAYA', district: 'SALEM' },
+  { schoolName: 'RASI VIDYASHRAMAM CBSE', district: 'SALEM' },
+  { schoolName: 'MONFORT SCHOOL', district: 'SALEM' },
+  { schoolName: 'HINDU GLOBAL SCHOOL', district: 'SALEM' },
+  { schoolName: 'SARATHA NEWGEN SCHOOL', district: 'SALEM' },
+  { schoolName: 'BUDDING MINDS INTERNATIONAL SCHOOL', district: 'TAMBARAM' },
+  { schoolName: 'SHANTHOSH VIDYALAYA MATRIC HIGHER SECONDARY SCHOOL', district: 'TAMBARAM' },
+  { schoolName: 'CEOA MATRIC HIGHER SECONDARY SCHOOL', district: 'THENI' },
+  { schoolName: 'ST. ANTONY\'S PUBLIC SCHOOL (CBSE)', district: 'TIRUNELVELI' },
+  { schoolName: 'SCAD INTERNATIONAL SCHOOL', district: 'TIRUNELVELI' },
+  { schoolName: 'VSR INTERNATIONAL SCHOOL', district: 'TIRUNELVELI' },
+  { schoolName: 'GOOD SHEPHERD SCHOOL', district: 'TIRUNELVELI' },
+  { schoolName: 'FRANCIS XAVIER SCHOOL', district: 'TIRUNELVELI' },
   { schoolName: 'ARYA VIDHYASSHRAM, INTERNATIONAL RESIDENTIAL SCHOOL', district: 'VELLORE' },
   { schoolName: 'ASHIRWAD INTERNATIONAL SCHOOL', district: 'VELLORE' },
   { schoolName: 'BALSAM ACADEMY', district: 'VELLORE' },
@@ -15,6 +51,7 @@ const schoolData = [
   { schoolName: 'MAYFLOWER KIDS (GN)', district: 'VELLORE' },
   { schoolName: 'MOTHER TERESA ENGLISH MEDIUM SCHOOL', district: 'VELLORE' },
   { schoolName: 'PINKZ PUBLIC SCHOOL', district: 'VELLORE' },
+  { schoolName: 'PUMS GOVT SCHOOL (PANGAYAT UNION MUNICIPALTY SCHOOL VASANTHANADAI)', district: 'VELLORE' },
   { schoolName: 'RATHINAGIRI BAGEERATHAN MATRICULATION HR SEC SCHOOL', district: 'VELLORE' },
   { schoolName: 'SAI GURUJI ELITE SCHOOL', district: 'VELLORE' },
   { schoolName: 'SHRI SHANTHINIKETHAN SCHOOL (SNMS)', district: 'VELLORE' },
@@ -24,43 +61,6 @@ const schoolData = [
   { schoolName: 'TULIP INTERNATIONAL SCHOOL', district: 'VELLORE' },
   { schoolName: 'VIDYANIKETAN MATRIC. HR. SEC. SCHOOL', district: 'VELLORE' },
   { schoolName: 'VELLORE INTERNATIONAL SCHOOL', district: 'VELLORE' },
-  { schoolName: 'ST. ANTONY\'S PUBLIC SCHOOL (CBSE)', district: 'TIRUNELVELI' },
-  { schoolName: 'SCAD INTERNATIONAL SCHOOL', district: 'TIRUNELVELI' },
-  { schoolName: 'VSR INTERNATIONAL SCHOOL', district: 'TIRUNELVELI' },
-  { schoolName: 'GOOD SHEPHERD SCHOOL', district: 'TIRUNELVELI' },
-  { schoolName: 'FRANCIS XAVIER SCHOOL', district: 'TIRUNELVELI' },
-  { schoolName: 'PANNAI PUBLIC', district: 'DINDIGUL' },
-  { schoolName: 'PANNAI MATRIC', district: 'DINDIGUL' },
-  { schoolName: 'THNU', district: 'DINDIGUL' },
-  { schoolName: 'MEENAKSHI', district: 'DINDIGUL' },
-  { schoolName: 'SINDINI MODEL', district: 'CHENNAI' },
-  { schoolName: 'GGN INTERNATIONAL', district: 'CHENNAI' },
-  { schoolName: 'SRI VENKATESHWARA', district: 'CHENNAI' },
-  { schoolName: 'SRI BALA VIDYALAYA', district: 'CHENNAI' },
-  { schoolName: 'THIRUVALLUVAR VIDYASHARAM', district: 'CHENNAI' },
-  { schoolName: 'PUMS GOVT SCHOOL (PANGAYAT UNION MUNICIPALTY SCHOOL VASANTHANADAI)', district: 'VELLORE' },
-  { schoolName: 'SVM ANANDHAASHRAMAM', district: 'SALEM' },
-  { schoolName: 'SVM SHIVAJI NAGAR', district: 'SALEM' },
-  { schoolName: 'SVM SHEVAPET', district: 'SALEM' },
-  { schoolName: 'SVM KONDALAMPATTY', district: 'SALEM' },
-  { schoolName: 'SVM AYOTHIYAPATTINAM', district: 'SALEM' },
-  { schoolName: 'SVM KANNANKURICHI', district: 'SALEM' },
-  { schoolName: 'SENTHIL PUBLIC SCHOOL', district: 'DHARAMAPURI' },
-  { schoolName: 'SENTHIL PUBLIC SCHOOL', district: 'SALEM' },
-  { schoolName: 'CLUNEY VIDYA NIKETHAN SCHOOL(CBSE)', district: 'SALEM' },
-  { schoolName: 'SRK MATRIC HR SEC SCHOOL', district: 'SALEM' },
-  { schoolName: 'SRK GLOBAL SCHOOL', district: 'SALEM' },
-  { schoolName: 'SRI RAM VIDYALAYA', district: 'SALEM' },
-  { schoolName: 'RASI VIDYASHRAMAM CBSE', district: 'SALEM' },
-  { schoolName: 'MONFORT SCHOOL', district: 'SALEM' },
-  { schoolName: 'HINDU GLOBAL SCHOOL', district: 'SALEM' },
-  { schoolName: 'SARATHA NEWGEN SCHOOL', district: 'SALEM' },
-  { schoolName: 'BUDDING MINDS INTERNATIONAL SCHOOL', district: 'TAMBARAM' },
-  { schoolName: 'SHANTHOSH VIDYALAYA MATRIC HIGHER SECONDARY SCHOOL', district: 'TAMBARAM' },
-  { schoolName: 'CEOA MATRIC HIGHER SECONDARY SCHOOL', district: 'THENI' },
-  { schoolName: 'VIVEKA MATRICULATION SCHOOL', district: 'NAMAKKAL' },
-  { schoolName: 'BHARATHIYAR HI TECH INTERNATIONAL SCHOOL (CBSE)', district: 'ATTUR' },
-  { schoolName: 'BHARATHIYAR MATRIC HIGHER SECONDARY SCHOOL', district: 'ATTUR' },
   { schoolName: 'OAC-VELLORE', district: 'OAC' },
   { schoolName: 'OAC-PARRYS', district: 'OAC' },
   { schoolName: 'OAC-SALEM', district: 'OAC' },
@@ -306,66 +306,67 @@ const Student_Form = () => {
             required
           >
             <option value="">Select Trainer</option>
-            <option value="Keerthika P">Keerthika P</option>
-            <option value="Pooja S">Pooja S</option>
-            <option value="Agaliya D">Agaliya D</option>
-            <option value="Dhivakar V C">Dhivakar V C</option>
-            <option value="Nabeesa R L">Nabeesa R L</option>
-            <option value="Shalini V">Shalini V</option>
-            <option value="Raju Shanmugam">Raju Shanmugam</option>
             <option value="Abirami S">Abirami S</option>
+            <option value="Agaliya D">Agaliya D</option>
+            <option value="Anitha K">Anitha K</option>
+            <option value="Bharani Dharan M">Bharani Dharan M</option>
+            <option value="Dharani">Dharani</option>
+            <option value="Dhivakar V C">Dhivakar V C</option>
+            <option value="Diana Franciska Mary">Diana Franciska Mary</option>
             <option value="Dinesh Kumar M">Dinesh Kumar M</option>
+            <option value="DINESH">DINESH</option>
             <option value="Fazil Khan F">Fazil Khan F</option>
             <option value="Frederick">Frederick</option>
             <option value="Ganesh I">Ganesh I</option>
+            <option value="Gokul G">Gokul G</option>
+            <option value="Gomathi">Gomathi</option>
+            <option value="Gowri K S">Gowri K S</option>
+            <option value="Harikrishnan K">Harikrishnan K</option>
+            <option value="Harish B">Harish B</option>
+            <option value="Hemalatha">Hemalatha</option>
             <option value="Hemamalini A">Hemamalini A</option>
+            <option value="Janifer Princilla">Janifer Princilla</option>
+            <option value="Jeevanandham">Jeevanandham</option>
             <option value="Jeevitha D">Jeevitha D</option>
+            <option value="Jenifer">Jenifer</option>
+            <option value="Jenifer R">Jenifer R</option>
+            <option value="Kaviya">Kaviya</option>
+            <option value="Kavitha M">Kavitha M</option>
+            <option value="Keerthika P">Keerthika P</option>
+            <option value="Lavenya">Lavenya</option>
+            <option value="Madhumathi V">Madhumathi V</option>
+            <option value="Mahalakshmi R">Mahalakshmi R</option>
+            <option value="Mekala S">Mekala S</option>
+            <option value="Mohankanth">Mohankanth</option>
+            <option value="Muthubalaji M">Muthubalaji M</option>
+            <option value="Nabeesa R L">Nabeesa R L</option>
+            <option value="Naveenkumar B">Naveenkumar B</option>
+            <option value="Nivetha">Nivetha</option>
+            <option value="Pathikonda Yuvarajulu">Pathikonda Yuvarajulu</option>
+            <option value="Pavithra B">Pavithra B</option>
+            <option value="Pooja S">Pooja S</option>
             <option value="Prabhu Raja S">Prabhu Raja S</option>
+            <option value="Priyanka R">Priyanka R</option>
+            <option value="Raju Shanmugam">Raju Shanmugam</option>
+            <option value="Ranjani P N">Ranjani P N</option>
             <option value="Revathi S">Revathi S</option>
             <option value="Santhosh P">Santhosh P</option>
+            <option value="Saradha Nagarajan">Saradha Nagarajan</option>
+            <option value="Saranya S">Saranya S</option>
             <option value="Sharmin Firdousy">Sharmin Firdousy</option>
+            <option value="Shalini V">Shalini V</option>
+            <option value="Shivaani S V">Shivaani S V</option>
+            <option value="Sindhu N">Sindhu N</option>
+            <option value="Sneha D">Sneha D</option>
             <option value="Soniya G">Soniya G</option>
-            <option value="Sudarson S">Sudarson S</option>
+            <option value="Sudharsan S">Sudharsan S</option>
+            <option value="Suganya K">Suganya K</option>
             <option value="Swarnamalya">Swarnamalya</option>
             <option value="Swathy Velu">Swathy Velu</option>
             <option value="Thenmozhi M">Thenmozhi M</option>
-            <option value="Pathikonda Yuvarajulu">Pathikonda Yuvarajulu</option>
-            <option value="Harish B">Harish B</option>
-            <option value="Anitha K">Anitha K</option>
-            <option value="Gowri K S">Gowri K S</option>
-            <option value="Mekala S">Mekala S</option>
-            <option value="Saradha Nagarajan">Saradha Nagarajan</option>
             <option value="Usharani B">Usharani B</option>
-            <option value="Mahalakshmi R">Mahalakshmi R</option>
-            <option value="Janifer Princilla">Janifer Princilla</option>
-            <option value="Naveenkumar B">Naveenkumar B</option>
-            <option value="Pavithra B">Pavithra B</option>
-            <option value="Sneha D">Sneha D</option>
-            <option value="Sindhu N">Sindhu N</option>
-            <option value="Gomathi">Gomathi</option>
-            <option value="Mohankanth">Mohankanth</option>
-            <option value="Diana Franciska Mary">Diana Franciska Mary</option>
-            <option value="Saranya S">Saranya S</option>
-            <option value="Kavitha M">Kavitha M</option>
-            <option value="Bharani Dharan M">Bharani Dharan M</option>
-            <option value="Gokul G">Gokul G</option>
-            <option value="Harikrishnan K">Harikrishnan K</option>
-            <option value="Madhumathi V">Madhumathi V</option>
-            <option value="Muthubalaji M">Muthubalaji M</option>
-            <option value="Priyanka R">Priyanka R</option>
-            <option value="Shivaani S V">Shivaani S V</option>
-            <option value="Jeevanandham">Jeevanandham</option>
-            <option value="Jenifer">Jenifer</option>
-            <option value="Suganya K">Suganya K</option>
-            <option value="Jenifer R">Jenifer R</option>
-            <option value="Ranjani P N">Ranjani P N</option>
             <option value="Vignesh M">Vignesh M</option>
-            <option value="Dharani">Dharani</option>
-            <option value="Kaviya">Kaviya</option>
-            <option value="DINESH">DINESH</option>
-            <option value="NIVETHA">NIVETHA</option>
-            <option value="Hemalatha">Hemalatha</option>
-            <option value="Lavenya">Lavenya</option>
+
           </select>
         </div>
 

@@ -9,6 +9,8 @@ const Student_Form = () => {
     level: '',
     contactNumber: '',
     trainerName: '',
+    event: '', 
+    submissionTime: '' 
   };
 
   const [formData, setFormData] = useState(initialState);
@@ -35,6 +37,20 @@ const Student_Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+   
+    const currentDate = new Date().toLocaleDateString('en-IN', {
+      timeZone: 'Asia/Kolkata', 
+      day: '2-digit',   
+      month: '2-digit', 
+      year: 'numeric',  
+    });
+    
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      submissionTime: currentDate 
+    }));
+    
+    
     // Validate contact number
     if (!validatePhoneNumber(formData.contactNumber)) {
       setMessage('Please enter a valid 10-digit contact number.');
@@ -51,9 +67,11 @@ const Student_Form = () => {
     submissionData.append("Level", formData.level);
     submissionData.append("ContactNumber", formData.contactNumber);
     submissionData.append("TrainerName", formData.trainerName);
+    submissionData.append("Event", formData.event); // Add event to submission
+    submissionData.append("SubmissionTime", formData.submissionTime); // Add submission time to the form data
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyjbQ3qOmJM6aq1JUBMQJW5IqR_RvdmEfKLW4dJ600W8DVpLVrPN3pZq9zkmc2a_29r1Q/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbxSiE70_4JPo2XvLOp-963BWwyK6I8m_Je_TDUjYURHVafD_pa9xT6Nh4QU_tLhmEYgkw/exec", {
         method: "POST",
         body: submissionData,
       });
@@ -90,6 +108,7 @@ const Student_Form = () => {
             required
           />
         </div>
+
         {/* School Name Field */}
         <div className="mb-3">
           <label htmlFor="schoolName" className="form-label fw-bold">School Name <span className="text-danger">*</span></label>
@@ -107,6 +126,7 @@ const Student_Form = () => {
             <option value="School C">School C</option>
           </select>
         </div>
+
         {/* Grade Field */}
         <div className="mb-3">
           <label htmlFor="grade" className="form-label fw-bold">Grade <span className="text-danger">*</span></label>
@@ -124,6 +144,7 @@ const Student_Form = () => {
             ))}
           </select>
         </div>
+
         {/* Level Field */}
         <div className="mb-3">
           <label htmlFor="level" className="form-label fw-bold">Level <span className="text-danger">*</span></label>
@@ -141,6 +162,29 @@ const Student_Form = () => {
             ))}
           </select>
         </div>
+
+        {/* Event Selection (Radio Buttons) */}
+        <div className="mb-3">
+          <label className="form-label fw-bold">Event <span className="text-danger">*</span></label>
+          <div className="d-flex flex-column flex-md-row">
+            {["Working Model", "RoboRace", "Workshop"].map((event) => (
+              <div key={event} className="form-check mb-2 mb-md-0 me-md-4"> {/* Added margin-right for spacing */}
+                <input
+                  type="radio"
+                  id={event}
+                  name="event"
+                  value={event}
+                  checked={formData.event === event}
+                  onChange={handleChange}
+                  className="form-check-input"
+                  required
+                />
+                <label htmlFor={event} className="form-check-label">{event}</label>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Contact Number Field */}
         <div className="mb-3">
           <label htmlFor="contactNumber" className="form-label fw-bold">Contact Number <span className="text-danger">*</span></label>
@@ -156,6 +200,7 @@ const Student_Form = () => {
             title="Please enter a valid 10-digit contact number"
           />
         </div>
+
         {/* Trainer Name Field */}
         <div className="mb-3">
           <label htmlFor="trainerName" className="form-label fw-bold">Trainer Name <span className="text-danger">*</span></label>
@@ -174,6 +219,13 @@ const Student_Form = () => {
           </select>
         </div>
 
+        {/* Hidden field for submission time */}
+        <input
+          type="hidden"
+          name="submissionTime"
+          value={formData.submissionTime}
+        />
+
         {/* Submit Button */}
         <div className='mt-3'>
           <button 
@@ -186,11 +238,18 @@ const Student_Form = () => {
             {isSubmitting && <span className="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>}
           </button>
         </div>
-
-        <div className="p-3">       
-          {message && <p className="text-center">{message}</p>}
-        </div>
       </form>
+
+<div className='p-5'>
+      {/* Message Display */}
+      {message && (
+        <div className="alert alert-info">
+          {message}
+        </div>
+      )}
+    </div>
+
+    
     </div>
   );
 };

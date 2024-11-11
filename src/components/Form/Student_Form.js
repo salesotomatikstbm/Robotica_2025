@@ -75,7 +75,7 @@ const schoolData = [
   { schoolName: 'OAC-MUMBAI', district: 'OAC' },
   { schoolName: 'OAC-UK', district: 'OAC' },
 ]
-;
+  ;
 
 const districts = [...new Set(schoolData.map((school) => school.district))]; // Unique districts
 
@@ -87,8 +87,8 @@ const Student_Form = () => {
     level: '',
     contactNumber: '',
     trainerName: '',
-    event: '', 
-    submissionTime: '', 
+    event: '',
+    submissionTime: '',
     district: '' // Adding district to form state
   };
 
@@ -112,19 +112,19 @@ const Student_Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   
+
     const currentDate = new Date().toLocaleDateString('en-IN', {
-      timeZone: 'Asia/Kolkata', 
-      day: '2-digit',   
-      month: '2-digit', 
-      year: 'numeric',  
+      timeZone: 'Asia/Kolkata',
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
     });
-    
+
     setFormData((prevFormData) => ({
       ...prevFormData,
-      submissionTime: currentDate 
+      submissionTime: currentDate
     }));
-    
+
     if (!validatePhoneNumber(formData.contactNumber)) {
       setMessage('Please enter a valid 10-digit contact number.');
       return;
@@ -185,7 +185,7 @@ const Student_Form = () => {
 
         {/* District Selection */}
         <div className="mb-3">
-          <label htmlFor="district" className="form-label fw-bold">District <span className="text-danger">*</span></label>
+          <label htmlFor="district" className="form-label fw-bold">Branch <span className="text-danger">*</span></label>
           <select
             className="form-select"
             id="district"
@@ -220,8 +220,8 @@ const Student_Form = () => {
           </select>
         </div>
 
-       {/* Grade Field */}
-       <div className="mb-3">
+        {/* Grade Field */}
+        <div className="mb-3">
           <label htmlFor="grade" className="form-label fw-bold">Grade <span className="text-danger">*</span></label>
           <select
             className="form-select"
@@ -306,9 +306,66 @@ const Student_Form = () => {
             required
           >
             <option value="">Select Trainer</option>
-            <option value="Trainer A">Trainer A</option>
-            <option value="Trainer B">Trainer B</option>
-            <option value="Trainer C">Trainer C</option>
+            <option value="Keerthika P">Keerthika P</option>
+            <option value="Pooja S">Pooja S</option>
+            <option value="Agaliya D">Agaliya D</option>
+            <option value="Dhivakar V C">Dhivakar V C</option>
+            <option value="Nabeesa R L">Nabeesa R L</option>
+            <option value="Shalini V">Shalini V</option>
+            <option value="Raju Shanmugam">Raju Shanmugam</option>
+            <option value="Abirami S">Abirami S</option>
+            <option value="Dinesh Kumar M">Dinesh Kumar M</option>
+            <option value="Fazil Khan F">Fazil Khan F</option>
+            <option value="Frederick">Frederick</option>
+            <option value="Ganesh I">Ganesh I</option>
+            <option value="Hemamalini A">Hemamalini A</option>
+            <option value="Jeevitha D">Jeevitha D</option>
+            <option value="Prabhu Raja S">Prabhu Raja S</option>
+            <option value="Revathi S">Revathi S</option>
+            <option value="Santhosh P">Santhosh P</option>
+            <option value="Sharmin Firdousy">Sharmin Firdousy</option>
+            <option value="Soniya G">Soniya G</option>
+            <option value="Sudarson S">Sudarson S</option>
+            <option value="Swarnamalya">Swarnamalya</option>
+            <option value="Swathy Velu">Swathy Velu</option>
+            <option value="Thenmozhi M">Thenmozhi M</option>
+            <option value="Pathikonda Yuvarajulu">Pathikonda Yuvarajulu</option>
+            <option value="Harish B">Harish B</option>
+            <option value="Anitha K">Anitha K</option>
+            <option value="Gowri K S">Gowri K S</option>
+            <option value="Mekala S">Mekala S</option>
+            <option value="Saradha Nagarajan">Saradha Nagarajan</option>
+            <option value="Usharani B">Usharani B</option>
+            <option value="Mahalakshmi R">Mahalakshmi R</option>
+            <option value="Janifer Princilla">Janifer Princilla</option>
+            <option value="Naveenkumar B">Naveenkumar B</option>
+            <option value="Pavithra B">Pavithra B</option>
+            <option value="Sneha D">Sneha D</option>
+            <option value="Sindhu N">Sindhu N</option>
+            <option value="Gomathi">Gomathi</option>
+            <option value="Mohankanth">Mohankanth</option>
+            <option value="Diana Franciska Mary">Diana Franciska Mary</option>
+            <option value="Saranya S">Saranya S</option>
+            <option value="Kavitha M">Kavitha M</option>
+            <option value="Bharani Dharan M">Bharani Dharan M</option>
+            <option value="Gokul G">Gokul G</option>
+            <option value="Harikrishnan K">Harikrishnan K</option>
+            <option value="Madhumathi V">Madhumathi V</option>
+            <option value="Muthubalaji M">Muthubalaji M</option>
+            <option value="Priyanka R">Priyanka R</option>
+            <option value="Shivaani S V">Shivaani S V</option>
+            <option value="Jeevanandham">Jeevanandham</option>
+            <option value="Jenifer">Jenifer</option>
+            <option value="Suganya K">Suganya K</option>
+            <option value="Jenifer R">Jenifer R</option>
+            <option value="Ranjani P N">Ranjani P N</option>
+            <option value="Vignesh M">Vignesh M</option>
+            <option value="Dharani">Dharani</option>
+            <option value="Kaviya">Kaviya</option>
+            <option value="DINESH">DINESH</option>
+            <option value="NIVETHA">NIVETHA</option>
+            <option value="Hemalatha">Hemalatha</option>
+            <option value="Lavenya">Lavenya</option>
           </select>
         </div>
 
@@ -320,10 +377,10 @@ const Student_Form = () => {
         />
 
         <div className="mt-3">
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="btn btn-primary w-100 p-3"
-            style={{ fontSize: '16px', fontWeight: 'bold', cursor: 'pointer'}}
+            style={{ fontSize: '16px', fontWeight: 'bold', cursor: 'pointer' }}
             disabled={isSubmitting}
           >
             {isSubmitting ? 'Submitting...' : 'Submit'}

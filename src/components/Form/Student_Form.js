@@ -113,17 +113,22 @@ const Student_Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const currentDate = new Date().toLocaleDateString('en-IN', {
+    const currentDateTime = new Date().toLocaleString('en-IN', {
       timeZone: 'Asia/Kolkata',
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
     });
-
+    
     setFormData((prevFormData) => ({
       ...prevFormData,
-      submissionTime: currentDate
+      submissionTime: currentDateTime
     }));
+    
 
     if (!validatePhoneNumber(formData.contactNumber)) {
       setMessage('Please enter a valid 10-digit contact number.');
@@ -144,7 +149,7 @@ const Student_Form = () => {
     submissionData.append("SubmissionTime", formData.submissionTime);
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbxSiE70_4JPo2XvLOp-963BWwyK6I8m_Je_TDUjYURHVafD_pa9xT6Nh4QU_tLhmEYgkw/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbz6vpGtmlYtkrQjisNA98VJdVWqUafNd6Pg1MuOe0CZXdCKxebrDRMu4d4V1chaWG90lA/exec", {
         method: "POST",
         body: submissionData,
       });

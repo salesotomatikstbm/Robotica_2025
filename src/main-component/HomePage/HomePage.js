@@ -6,7 +6,7 @@ import Offer from '../../components/offer/offer';
 import Scrollbar from '../../components/scrollbar/scrollbar';
 import Testimonial from '../../components/Testimonial/Testimonial';
 import Swal from 'sweetalert2';
-import AlertImage from '../../images/Robotica 25 venue update.png';
+import AlertImage from '../../images/chennai.jpg';
 import WorkingModel from '../../components/EventCategory/WorkingModel';
 import RoboRace from '../../components/EventCategory/RoboRace';
 import About from '../../components/about/about';

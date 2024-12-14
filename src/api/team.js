@@ -1,28 +1,30 @@
+import Guest1 from './../images/Guests/1.png';
+import Guest2 from './../images/Guests/2.png';
+import Guest3 from './../images/Guests/3.png';
+import Guest5 from './../images/Guests/5.png';
+
 const Teams = [
    {
        Id: '1',
-       tImg: 'https://via.placeholder.com/180?text=Chief+Guest+1', // Google placeholder image
-       name: 'Chief Guest 1',
-       title: 'Position',
+       tImg: Guest5, 
+    name: 'LYDIAN NADHASWARAM',
+    title: 'MUSIC DIRECTOR',
+    Dis: '2019 World Best Performer Award by CBS'
    },
    {
        Id: '2',
-       tImg: 'https://via.placeholder.com/180?text=Chief+Guest+2', // Google placeholder image
-       name: 'Chief Guest 2',
-       title: 'Position',
+       tImg: Guest2, 
+       name: 'DR. C SYLENDRA BABU, IPS(RETD.),',
+       title: 'FORMER DSP,',
+        Dis: 'HEAD OF POLICE FORCE'
    },
    {
-       Id: '3',
-       tImg: 'https://via.placeholder.com/180?text=Chief+Guest+3', // Google placeholder image
-       name: 'Chief Guest 3',
-       title: 'Position',
-   },
-   {
-       Id: '4',
-       tImg: 'https://via.placeholder.com/180?text=Chief+Guest+4', // Google placeholder image
-       name: 'Chief Guest 4',
-       title: 'Position',
-   },
+    Id: '3',
+    tImg: Guest1, 
+       name: 'DR. G V SELVAM',
+       title: 'VICE-PRESIDENT,',
+       Dis: 'VELLORE INSTITUTE OF TECHNOLOGY'
+},
 ];
 
 export default Teams;

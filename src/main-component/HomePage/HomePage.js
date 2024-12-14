@@ -19,6 +19,7 @@ import OfferCountdown from '../../components/TimeZone/OfferCountdown';
 import './HomePage.css'; // Import custom CSS for styles
 import Hero1 from '../../components/hero/hero1';
 import RoboticaInfo from '../../components/hero/RoboticaInfo';
+import Guests1 from '../../components/Guests/Guests1';
 
 const HomePage = () => {
     useEffect(() => {
@@ -68,6 +69,9 @@ const HomePage = () => {
                         </section>
                         {/* <section id="guests" className="" data-aos="fade-right" data-aos-duration="1000">
                             <Guests />
+                        </section>
+                        <section id="guests" className="" data-aos="fade-right" data-aos-duration="1000">
+                          <Guests1 />
                         </section> */}
                         <section id="offer-countdown" className="" data-aos="flip-left" data-aos-duration="800">
                             <OfferCountdown />

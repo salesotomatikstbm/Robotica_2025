@@ -13,8 +13,8 @@ const day1Policy = [
 ];
 
 const day2Policy = [
-    { title: 'In-School Competition', time: '9 AM - 4 PM', icon: faBox },
-    { title: 'Prize Distribution', time: '4 PM - 6 PM', icon: faReceipt },
+    { title: 'In-School Competition', time: '8 AM - 1 PM', icon: faBox },
+    { title: 'Prize Distribution', time: '3 PM - 6 PM', icon: faReceipt },
 ];
 
 const About = () => {

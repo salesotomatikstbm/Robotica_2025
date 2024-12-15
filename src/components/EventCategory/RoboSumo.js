@@ -6,7 +6,7 @@ import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
 import srImg1 from '../../images/RoboSumo/1.png';
 import srImg2 from '../../images/RoboSumo/2.png';
 import srImg3 from '../../images/RoboSumo/3.png';
-import pdf from '../../images/Working model- Robotica 2025.pdf';
+import pdf from '../../images/RoboSumo/Robosumo.pdf';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]); // Enable Swiper modules
 

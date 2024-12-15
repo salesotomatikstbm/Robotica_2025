@@ -14,24 +14,8 @@ const FounderMessage = () => {
         }}
       >
         <div className="row align-items-center">
-          {/* Founder Image */}
-          <div className="col-12 col-md-4 text-center order-2 order-md-1"> {/* Changed order for mobile */}
-            <img
-              src={Founder}
-              alt="Sathish S, Founder & CEO"
-              className="img-fluid rounded-circle shadow"
-              style={{
-                width: "250px",
-                height: "250px",
-                objectFit: "cover",
-                border: "5px solid white",
-                marginBottom: "20px",
-              }}
-            />
-          </div>
-
           {/* Founder Message */}
-          <div className="col-12 col-md-8 order-1 order-md-2 mt-4 mt-md-0"> {/* Changed order for mobile */}
+          <div className="col-12 col-md-8 order-2 order-md-1 mt-4 mt-md-0"> {/* Changed order */}
             <div
               className="p-3 p-md-4"
               style={{
@@ -56,6 +40,22 @@ const FounderMessage = () => {
               <p className="text-muted">Founder & CEO, Otomatiks</p>
             </div>
           </div>
+
+          {/* Founder Image */}
+          <div className="col-12 col-md-4 text-center order-1 order-md-2"> {/* Changed order */}
+            <img
+              src={Founder}
+              alt="Sathish S, Founder & CEO"
+              className="img-fluid rounded-circle shadow"
+              style={{
+                width: "250px",
+                height: "250px",
+                objectFit: "cover",
+                border: "5px solid white",
+                marginBottom: "20px",
+              }}
+            />
+          </div>
         </div>
       </div>
 
@@ -63,7 +63,7 @@ const FounderMessage = () => {
       <style jsx>{`
         @media (max-width: 768px) {
           .row {
-            flex-direction: column-reverse; /* Stack image above text on mobile */
+            flex-direction: column-reverse; /* Reverses the stacking order for mobile */
           }
         }
       `}</style>

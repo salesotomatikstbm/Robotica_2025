@@ -49,7 +49,7 @@ const RoboSumo = () => {
                                 </div>
                             </div>
 
-                            <div className="col-lg-5 order-1 order-lg-2">
+                            <div className="col-lg-5 order-2 order-lg-1">
                                 <div className="about_content">
                                     <h2 className="heading_text text-primary">Robo Sumo</h2>
                                     <p className="heading_description mb-2 text-dark" style={{ textAlign: "justify" }}>

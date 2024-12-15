@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import sImg2 from '../../images/Offer/1.png';
 import sImg3 from '../../images/Offer/2.png';
 import sImg4 from '../../images/Offer/3.png';
+import sImg5 from '../../images/Offer/4.png';
 import pdf from '../../images/about.pdf';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -19,21 +20,28 @@ const Offer = () => {
             sImg: sImg2,
             title: 'Trophy',
             slug: 'Trophy',
-            col: 'col-lg-4 col-md-6 col-sm-12', // Bootstrap classes for responsive columns
+            col: 'col-lg-3 col-md-6 col-sm-12', // Bootstrap classes for responsive columns
         },
         {
             id: '2',
             sImg: sImg3,
             title: 'Medal',
             slug: 'Medal',
-            col: 'col-lg-4 col-md-6 col-sm-12',
+            col: 'col-lg-3 col-md-6 col-sm-12',
         },
         {
             id: '3',
             sImg: sImg4,
             title: 'Certificate',
             slug: 'Certificate',
-            col: 'col-lg-4 col-md-6 col-sm-12',
+            col: 'col-lg-3 col-md-6 col-sm-12',
+        },
+        {
+            id: '4',
+            sImg: sImg5,
+            title: 'Price Pool',
+            slug: 'Certificate',
+            col: 'col-lg-3 col-md-6 col-sm-12',
         },
     ];
 

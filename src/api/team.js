@@ -7,9 +7,9 @@ const Teams = [
    {
        Id: '1',
        tImg: Guest5, 
-    name: 'LYDIAN NADHASWARAM',
+    name: 'MR. LYDIAN NADHASWARAM',
     title: 'MUSIC DIRECTOR',
-    Dis: '2019 World Best Performer Award by CBS'
+    Dis: '2019 WORLD BEST PERFORMER AWARD BY CBS'
    },
    {
        Id: '2',

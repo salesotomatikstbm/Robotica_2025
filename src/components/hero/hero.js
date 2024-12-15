@@ -67,7 +67,7 @@ const Hero = (props) => {
                             <h2 className="" style={{ marginBottom: '15px' }}>
                                 Robotica <mark>2025</mark><br /> Celebrating Innovation
                             </h2>
-                            <p className="text-dark text-justify" style={{ marginBottom: '20px' }}>
+                            <p className="text-dark text-justify" style={{ marginBottom: '20px', textAlign: "justify"  }} >
                                 Robotica’25 ain’t just a competition; it’s a celebration of innovation and creativity in the realm of robotics. Building on the success of our previous competitions, where we welcomed over 2500+ participants from 80+ schools across the state, this year aims to surpass all expectations.
                             </p>
                             <div className="container text-center" style={{ marginBottom: '15px' }}>

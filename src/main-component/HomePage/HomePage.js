@@ -20,6 +20,7 @@ import './HomePage.css'; // Import custom CSS for styles
 import Hero1 from '../../components/hero/hero1';
 import RoboticaInfo from '../../components/hero/RoboticaInfo';
 import Guests1 from '../../components/Guests/Guests1';
+import RoboSumo from '../../components/EventCategory/RoboSumo';
 
 const HomePage = () => {
     useEffect(() => {
@@ -67,12 +68,12 @@ const HomePage = () => {
                         <section id="founder-message" className="" data-aos="fade-down" data-aos-duration="1000">
                             <FounderMessage />
                         </section>
-                        {/* <section id="guests" className="" data-aos="fade-right" data-aos-duration="1000">
+                        <section id="guests" className="" data-aos="fade-right" data-aos-duration="1000">
                             <Guests />
                         </section>
                         <section id="guests" className="" data-aos="fade-right" data-aos-duration="1000">
                           <Guests1 />
-                        </section> */}
+                        </section>
                         <section id="offer-countdown" className="" data-aos="flip-left" data-aos-duration="800">
                             <OfferCountdown />
                         </section>
@@ -82,7 +83,9 @@ const HomePage = () => {
                         <section id="robo-race" className="" data-aos="slide-up" data-aos-duration="1200">
                             <RoboRace />
                         </section>
-
+                        <section id="robo-race" className="" data-aos="slide-up" data-aos-duration="1200">
+                           <RoboSumo />
+                        </section>
                         <section id="offer" className="" data-aos="zoom-in" data-aos-duration="800">
                             <Offer />
                         </section>

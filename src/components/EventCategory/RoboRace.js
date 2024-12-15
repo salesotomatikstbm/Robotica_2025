@@ -56,7 +56,7 @@ const RoboRace = () => {
                             <div className="col-lg-6 mb-4 mb-lg-0">
                                 <div className="about_content">
                                     <h2 className="heading_text text-primary">Robo Race</h2>
-                                    <p className="heading_description mb-3 text-dark text-justify">
+                                    <p className="heading_description mb-3 text-dark text-justify" style={{ textAlign: "justify" }}>
                                         Brace yourself for an electrifying contest! In this dynamic race, teams will engineer and construct their own Robo Cars, skillfully navigating a meticulously designed track. Speed, strategic thinking, and collaboration will be paramount as you compete for the esteemed title of Robo Race champion!
                                     </p>
                                     <ul className="event-themes-list ">

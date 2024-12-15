@@ -15,7 +15,6 @@ import srImg9 from '../../images/workingmodel/9.png';
 import srImg10 from '../../images/workingmodel/10.png';
 import srImg11 from '../../images/workingmodel/11.png';
 import srImg12 from '../../images/workingmodel/12.png';
-import RoboRace from './RoboRace';
 import pdf from '../../images/Working model- Robotica 2025.pdf';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]); // Enable Swiper modules
@@ -32,7 +31,36 @@ const WorkingModel = () => {
                     <div className="container">
                         <h1 className="heading_text text-center heading_block text-primary">Event Category</h1>
                         <div className="row align-items-center justify-content-center">
-                            <div className="col-lg-5">
+                            {/* Image Section */}
+                            <div className="col-lg-6 mb-4 text-center order-1 order-lg-2">
+                                <div className="team_cartoon_image">
+                                    {/* Swiper slider starts here */}
+                                    <Swiper
+                                        spaceBetween={30}
+                                        centeredSlides={true}
+                                        autoplay={{
+                                            delay: 2000,
+                                            disableOnInteraction: false,
+                                        }}
+                                        navigation={false}
+                                        className="mySwiper"
+                                    >
+                                        {[srImg1, srImg2, srImg3, srImg4, srImg5, srImg6, srImg7, srImg8, srImg9, srImg10, srImg11, srImg12].map((img, index) => (
+                                            <SwiperSlide key={index}>
+                                                <img
+                                                    src={img}
+                                                    alt={`Working Model Image ${index + 1}`}
+                                                    className="img-fluid rounded shadow"
+                                                    style={{ width: '130%', height: '360px', objectFit: 'cover' }}
+                                                />
+                                            </SwiperSlide>
+                                        ))}
+                                    </Swiper>
+                                </div>
+                            </div>
+
+                            {/* Content Section */}
+                            <div className="col-lg-5 order-2 order-lg-1">
                                 <div className="about_content">
                                     <h2 className="heading_text text-primary">Working Model</h2>
                                     <p className="heading_description mb-2 text-dark text-justify" style={{ textAlign: "justify" }}>
@@ -46,7 +74,6 @@ const WorkingModel = () => {
                                     </ul>
                                 </div>
 
-                                {/* Updated Button Group for mobile responsiveness */}
                                 <div className="btns_group d-flex flex-column flex-md-row justify-content-center">
                                     <a
                                         href="https://pages.razorpay.com/robotica25"
@@ -69,38 +96,11 @@ const WorkingModel = () => {
                                     </a>
                                 </div>
                             </div>
-
-                            <div className="col-lg-6 mb-4 text-center">
-                                <div className="team_cartoon_image">
-                                    {/* Swiper slider starts here */}
-                                    <Swiper
-                                        spaceBetween={30}
-                                        centeredSlides={true}
-                                        autoplay={{
-                                            delay: 2000,
-                                            disableOnInteraction: false,
-                                        }}
-                                        navigation={false}
-                                        className="mySwiper"
-                                    >
-                                        {[srImg1, srImg2, srImg3, srImg4, srImg5, srImg6, srImg7, srImg8, srImg9, srImg10, srImg11, srImg12].map((img, index) => (
-                                            <SwiperSlide key={index}>
-                                                <img
-                                                    src={img}
-                                                    alt={`Working Model Image ${index + 1}`}
-                                                    className="img-fluid rounded shadow"
-                                                    style={{ width: '130%', height: '360px', objectFit: 'cover' }} // Set equal width and height
-                                                />
-                                            </SwiperSlide>
-                                        ))}
-                                    </Swiper>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Custom CSS to remove bottom margin for mobile view */}
+                {/* Custom CSS to adjust layout */}
                 <style jsx>{`
                     @media (max-width: 768px) {
                         .btns_group .btn-secondary {

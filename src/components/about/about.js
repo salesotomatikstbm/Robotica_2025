@@ -7,7 +7,7 @@ import wImg2 from '../../images/about/2.png';
 import wImg3 from '../../images/about/3.png';
 
 const day1Policy = [
-    { title: 'Working Model & Roborace', time: '9 AM - 1 PM', icon: faCheckCircle },
+    { title: 'Working Model, Robo Race & Robo Sumo', time: '9 AM - 1 PM', icon: faCheckCircle },
     { title: 'Panel Discussion', time: '2 PM - 4 PM', icon: faLeaf },
     { title: 'Prize Distribution', time: '4 PM - 6 PM', icon: faTrophy },
 ];

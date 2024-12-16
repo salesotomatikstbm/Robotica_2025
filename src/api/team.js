@@ -15,7 +15,7 @@ const Teams = [
        Id: '2',
        tImg: Guest2, 
        name: 'DR. C SYLENDRA BABU, IPS(RETD.),',
-       title: 'FORMER DSP,',
+       title: 'FORMER DGP,',
         Dis: 'HEAD OF POLICE FORCE'
    },
    {

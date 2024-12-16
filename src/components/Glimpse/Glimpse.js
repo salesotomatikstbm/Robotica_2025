@@ -90,7 +90,7 @@ const Glimpse = () => {
             <iframe
               width="80%"
               height="80%"
-              src="https://www.youtube.com/embed/uC-K8NP2Khw?autoplay=1" // Automatically play video in full screen
+              src="https://www.youtube.com/embed/I-vdhLprvus?si=kAeiLVOcVYINWTBR" // Automatically play video in full screen
               title="YouTube video"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
@@ -108,14 +108,12 @@ const Glimpse = () => {
               onClick={() => setVideoOpen(false)}
               style={{
                 position: 'absolute',
-                top: '20px',
-                right: '20px',
-                backgroundColor: '#fff',
-                color: '#000',
-                border: 'none',
+                top: '-1px',
+                right: '-100px',
+                         border: 'none',
                 borderRadius: '50%',
-                width: '30px',
-                height: '30px',
+                width: '530px',
+                height: '100px',
                 fontSize: '20px',
                 fontWeight: 'bold',
                 cursor: 'pointer',

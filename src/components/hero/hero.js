@@ -152,6 +152,18 @@ const Hero = (props) => {
                     <div className="col-lg-6">
                         <div className="video_wrap" style={{ marginTop: '0px' }}>
                             <Slider {...sliderSettings}>
+                            <div>
+                                    <iframe
+                                        width="95%"
+                                        height="350"
+                                        src="https://www.youtube.com/embed/I-vdhLprvus?si=kAeiLVOcVYINWTBR"
+                                        title="YouTube Video 1"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                        style={{ borderRadius: '8px' }}
+                                    ></iframe>
+                                </div>
                                 <div>
                                     <iframe
                                         width="95%"
@@ -176,6 +188,7 @@ const Hero = (props) => {
                                         style={{ borderRadius: '8px' }}
                                     ></iframe>
                                 </div>
+                                
                             </Slider>
                         </div>
                     </div>

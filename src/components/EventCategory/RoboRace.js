@@ -68,10 +68,10 @@ const RoboRace = () => {
                                     
                                     {/* Button Group */}
                                     <div className="btns_group d-flex flex-column flex-md-row justify-content-center">
-                                    <a href="https://pages.razorpay.com/robotica25"
+                                    <a href=""
                                         target="_blank"
                                         rel="noopener noreferrer" className="btn btn-primary w-45 w-md-auto text-center">
-                                        <span className="btn_label" data-text="Register Now">Enroll Now</span>
+                                        <span className="btn_label" data-text="Registration Closed">Registration Closed</span>
                                         <span className="btn_icon">
                                             <i className="fa-solid fa-arrow-up-right"></i>
                                         </span>

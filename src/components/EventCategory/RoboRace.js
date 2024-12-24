@@ -68,7 +68,7 @@ const RoboRace = () => {
                                     
                                     {/* Button Group */}
                                     <div className="btns_group d-flex flex-column flex-md-row justify-content-center">
-                                    <a href=""
+                                    <a 
                                         target="_blank"
                                         rel="noopener noreferrer" className="btn btn-primary w-45 w-md-auto text-center">
                                         <span className="btn_label" data-text="Registration Closed">Registration Closed</span>

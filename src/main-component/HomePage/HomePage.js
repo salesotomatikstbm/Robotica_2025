@@ -21,6 +21,9 @@ import Hero1 from '../../components/hero/hero1';
 import RoboticaInfo from '../../components/hero/RoboticaInfo';
 import Guests1 from '../../components/Guests/Guests1';
 import RoboSumo from '../../components/EventCategory/RoboSumo';
+import YoungResearchersConclave from '../../components/EventCategory/YoungResearchersConclave';
+import Event from '../../components/EventCategory/Event';
+import PoloGuests from '../../components/Guests/PoloGuests';
 
 const HomePage = () => {
     useEffect(() => {
@@ -65,9 +68,14 @@ const HomePage = () => {
                         <section id="about" className="" data-aos="zoom-in" data-aos-duration="1200">
                             <About />
                         </section>
+                       
                         <section id="founder-message" className="" data-aos="fade-down" data-aos-duration="1000">
                             <FounderMessage />
+                          
                         </section>
+                       
+                      
+
                         <section id="guests" className="" data-aos="fade-right" data-aos-duration="1000">
                             <Guests />
                         </section>
@@ -85,6 +93,12 @@ const HomePage = () => {
                         </section>
                         <section id="robo-race" className="" data-aos="slide-up" data-aos-duration="1200">
                            <RoboSumo />
+                        </section>
+                        <section id="offer-countdown" className="" data-aos="flip-left" data-aos-duration="800">
+                        <Event />
+                        </section>
+                        <section id="guests" className="" data-aos="fade-right" data-aos-duration="1000">
+                         <PoloGuests />
                         </section>
                         <section id="offer" className="" data-aos="zoom-in" data-aos-duration="800">
                             <Offer />

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import pdf from '../../images/about.pdf'; // Correct the path to your actual PDF
 
 const OfferCountdown = () => {
-  const targetDate = new Date('2025-01-11T00:00:00'); // Target Date
+  const targetDate = new Date('2025-01-26T00:00:00'); // Target Date
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,

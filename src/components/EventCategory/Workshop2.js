@@ -3,23 +3,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css'; // Import Swiper styles
 import 'swiper/swiper.min.css';
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
-import srImg1 from '../../images/workingmodel/1.png';
-import srImg2 from '../../images/workingmodel/2.png';
-import srImg3 from '../../images/workingmodel/3.png';
-import srImg4 from '../../images/workingmodel/4.png';
-import srImg5 from '../../images/workingmodel/5.png';
-import srImg6 from '../../images/workingmodel/6.png';
-import srImg7 from '../../images/workingmodel/7.png';
-import srImg8 from '../../images/workingmodel/8.png';
-import srImg9 from '../../images/workingmodel/9.png';
-import srImg10 from '../../images/workingmodel/10.png';
-import srImg11 from '../../images/workingmodel/11.png';
-import srImg12 from '../../images/workingmodel/12.png';
+import newImage1 from '../../images/ws1.jpg';
+import newImage2 from '../../images/ws2.jpg';
+import newImage3 from '../../images/ws1.jpg';
+import newImage4 from '../../images/ws2.jpg';
+import newImage5 from '../../images/ws1.jpg';
+
 import pdf from '../../images/Working model- Robotica 2025.pdf';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]); // Enable Swiper modules
 
-const WorkingModel = () => {
+const Workshop2 = () => {
     const ClickHandler = () => {
         window.scrollTo(0, 0);
     };
@@ -45,13 +39,13 @@ const WorkingModel = () => {
                                         navigation={false}
                                         className="mySwiper"
                                     >
-                                        {[srImg1, srImg2, srImg3, srImg4, srImg5, srImg6, srImg7, srImg8, srImg9, srImg10, srImg11, srImg12].map((img, index) => (
-                                            <SwiperSlide key={index}>
+                                       {[newImage2].map((img, index) => (
+                                           <SwiperSlide key={index}>
                                                 <img
                                                     src={img}
                                                     alt={`Working Model Image ${index + 1}`}
                                                     className="img-fluid rounded shadow"
-                                                    style={{ width: '130%', height: '560px', objectFit: 'cover' }}
+                                                    style={{ width: '130%', height: '600px', objectFit: 'cover' }}
                                                 />
                                             </SwiperSlide>
                                         ))}
@@ -62,21 +56,24 @@ const WorkingModel = () => {
                             {/* Content Section */}
                             <div className="col-lg-5 order-2 order-lg-1">
                                 <div className="about_content">
-                                    <h2 className="heading_text text-primary">WORKING MODEL</h2>
-                                    <p className="heading_description mb-2 text-dark text-justify" style={{ textAlign: "justify" }}>
-                                        Transform your visions into reality! Teams are invited to craft and present their innovative working models, elucidating both their functionality and the underlying scientific principles. Seize this opportunity to captivate a panel of esteemed judges and underscore the profound significance of your creation!
+                                    <h2 className="heading_text text-primary">ELECTRIC VEHICLES WORKSHOP</h2>
+                                    <p className="heading_description mb-3 text-dark text-justify" style={{ textAlign: "justify" }}>
+                                    ELECTRIC VEHICLES WORKSHOP ORGANISED BY OTOMATIKS AND TOP ENGINEERS IN ASSOCIATION WITH MECHANICA’24 IIT MADRAS
+                                    </p>
+                                    <p className="heading_description mb-3 text-dark text-justify" style={{ textAlign: "justify" }}>
+                                    Open For all Students (School, Engineering / Arts and Science), Staffs, Entrepreneurs, Incubators, Start Ups, Freelancers, Business Owners and Professionals.
                                     </p>
                                     <ul className="event-themes-list mb-4">
-                                        <li><strong>Date:</strong> 7th February 2025</li>
-                                        <li><strong>Time:</strong> 09:00 AM - 01:00 PM</li>
+                                        <li><strong>Date:</strong> 8th February 2025</li>
+                                        <li><strong>Time:</strong> 09:30 AM - 04:30 PM</li>
                                         <li><strong>Venue:</strong> VIT University, Chennai</li>
-                                        <li><strong>Participation Fees:</strong> ₹ 800 /- only</li>
+                                    
                                     </ul>
                                 </div>
 
                                 <div className="btns_group d-flex flex-column flex-md-row justify-content-center">
                                     <a
-                                        href="https://pages.razorpay.com/robotica25"
+                                        href="https://pages.razorpay.com/pl_Pkj23JfDeDsLx8/view"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="btn btn-primary w-45 w-md-auto text-center"
@@ -113,4 +110,4 @@ const WorkingModel = () => {
     );
 };
 
-export default WorkingModel;
+export default Workshop2;

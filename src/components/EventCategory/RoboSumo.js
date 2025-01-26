@@ -41,7 +41,7 @@ const RoboSumo = () => {
                                                     src={img}
                                                     alt={`Working Model Image ${index + 1}`}
                                                     className="img-fluid rounded shadow"
-                                                    style={{ width: '130%', height: '360px', objectFit: 'cover' }}
+                                                    style={{ width: '130%', height: '560px', objectFit: 'cover' }}
                                                 />
                                             </SwiperSlide>
                                         ))}

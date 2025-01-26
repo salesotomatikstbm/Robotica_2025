@@ -20,6 +20,8 @@ const RoboSumo1 = () => {
         <Fragment>
             <main className="page_content about-page">
                 <section className="about_section section_space bg-white">
+                <h1 className="heading_text text-center heading_block text-primary">Event Category</h1>
+                     
                     <div className="container">
                         <div className="row align-items-center justify-content-between">
                             {/* Image Slider Section */}

@@ -66,8 +66,7 @@ const HomePage = () => {
 
                     <section id="hero" className="" data-aos="fade-up" data-aos-duration="1000">
                         <Hero />
-                        {/* <Hero1 />
-                        <RoboticaInfo /> */}
+                       
                     </section>
                     <div className="container main-content">
                     <section id="working-model" className="" data-aos="fade-up" data-aos-duration="1000">
@@ -136,6 +135,16 @@ const HomePage = () => {
                     </div>
                 </main>
                 <Scrollbar />
+                <style jsx>{`
+  @media (max-width: 768px) {
+    #working-model {
+      margin-top: 0 !important; /* Remove top margin in mobile view */
+    }
+  }
+`}</style>
+
+
+
             </div>
         </Fragment>
     );

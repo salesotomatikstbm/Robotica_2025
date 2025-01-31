@@ -45,7 +45,7 @@ const Workshop2 = () => {
                                                     src={img}
                                                     alt={`Working Model Image ${index + 1}`}
                                                     className="img-fluid rounded shadow"
-                                                    style={{ width: '130%', height: '600px', objectFit: 'cover' }}
+                                                    style={{  objectFit: 'cover' }}
                                                 />
                                             </SwiperSlide>
                                         ))}

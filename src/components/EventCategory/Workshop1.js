@@ -40,12 +40,13 @@ const Workshop1 = () => {
                                     >
                                         {[newImage1].map((img, index) => (
                                             <SwiperSlide key={index}>
-                                                <img
-                                                    src={img}
-                                                    alt={`Robo Race Image ${index + 1}`}
-                                                    className="img-fluid rounded shadow"
-                                                    style={{ width: '100%', height: '600px', objectFit: 'cover' }} // Set equal width and height
-                                                />
+                                               <img
+    src={img}
+    alt={`Robo Race Image ${index + 1}`}
+    className="img-fluid rounded shadow"
+    style={{ objectFit: 'cover' }}
+/>
+
                                             </SwiperSlide>
                                         ))}
                                     </Swiper>

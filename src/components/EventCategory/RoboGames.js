@@ -4,7 +4,7 @@ import 'swiper/swiper-bundle.min.css'; // Import Swiper styles
 import 'swiper/swiper.min.css';
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
 import srImg1 from '../../images/RoboGame.jpg';
-import pdf from '../../images/Working model- Robotica 2025.pdf';
+import pdf from '../../images/Robo Games.pdf';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]); // Enable Swiper modules
 

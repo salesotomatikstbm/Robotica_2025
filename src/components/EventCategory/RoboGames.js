@@ -56,7 +56,7 @@ const RoboGames = () => {
 
                                 <div className="btns_group d-flex flex-column flex-md-row justify-content-center">
                                     <a
-                                        href="https://pages.razorpay.com/pl_PmmnTG497Fepb4/view"
+                                        href="https://pages.razorpay.com/GAMEARENA-25-ONE"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="btn btn-primary w-45 w-md-auto text-center"

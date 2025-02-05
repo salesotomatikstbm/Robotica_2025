@@ -63,7 +63,7 @@ const RoboRace = () => {
                                         <li><strong>Date:</strong> 7th February 2025</li>
                                         <li><strong>Time:</strong> 09:00 AM - 01:00 PM</li>
                                         <li><strong>Venue:</strong> VIT University, Chennai</li>
-                                        <li><strong>Participation Fees:</strong> ₹ 800 /- only</li>
+                                        <li><strong>Participation Fees:</strong> ₹ 800 /- only.</li>
                                     </ul>
                                     
                                     {/* Button Group */}

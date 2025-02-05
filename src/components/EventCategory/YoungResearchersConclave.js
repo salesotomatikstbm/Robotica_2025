@@ -7,7 +7,7 @@ const YoungResearchersConclave = () => {
       <div className="text-center mb-5">
         <h2 className="heading_text text-primary">Join the Young Researchers Conclave 2025!</h2>
         <p className="heading_description mb-3 text-dark text-justify" style={{ textAlign: "justify" }}>
-        Participate in the prestigious Robotica-25 event at VIT University, Chennai
+        Participate in the prestigious Robotica-25 event at VIT University, Chennai.
                                     </p>
      
       </div>
